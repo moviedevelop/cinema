@@ -5,9 +5,13 @@ import com.etc.pojo.Users;
 import com.etc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user")
@@ -35,5 +39,18 @@ public class UserController {
         }
         message.setMessage("手机号已被注册");
         return message;
+    }
+
+    @RequestMapping("/login")
+    public  String login(Users users, HttpSession session, Model model) {
+        Users loginUser = userService.selectUserByUsernameAndPass(users);
+        if (loginUser == null) {
+            String str = "用户名或密码错误！";
+            model.addAttribute("str", str);
+            return "redirect:../index";
+        } else {
+            session.setAttribute("userId", loginUser.getUserId());
+            return "redirect:../index";
+        }
     }
 }

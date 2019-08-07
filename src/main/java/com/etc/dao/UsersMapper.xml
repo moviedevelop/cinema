@@ -19,6 +19,10 @@
     user_about
   </sql>
 
+  <select id="selectUserByUsernameAndPass" resultMap="BaseResultMap" parameterType="com.etc.pojo.Users">
+    select * from users where user_tel = #{userTel} and user_pass = #{userPass}
+  </select>
+
   <select id="checkTelExist" resultMap="BaseResultMap">
     select * from users where user_tel = #{tel}
   </select>

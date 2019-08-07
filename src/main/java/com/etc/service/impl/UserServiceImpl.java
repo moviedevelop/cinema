@@ -24,4 +24,14 @@ public class UserServiceImpl implements UserService {
         }
         return true;
     }
+
+    @Override
+    public Users selectByPrimaryKey(Integer userId) {
+        return mapper.selectByPrimaryKey(userId);
+    }
+
+    @Override
+    public Users selectUserByUsernameAndPass(Users users) {
+        return mapper.selectUserByUsernameAndPass(users);
+    }
 }

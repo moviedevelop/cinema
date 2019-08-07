@@ -19,4 +19,6 @@ public interface UsersMapper {
     int updateByPrimaryKey(Users record);
 
     Users checkTelExist(String tel);
+
+    Users selectUserByUsernameAndPass(Users users);
 }

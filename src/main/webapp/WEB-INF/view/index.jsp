@@ -224,17 +224,14 @@
                                 <a href="#">Connect with Google</a>
                             </div>
                             <div class="button-bottom">
-                                <p>New account? <a href="#small-dialog2"
-                                                   class="play-icon popup-with-zoom-anim">Signup</a></p>
+                                <p>New account? <a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Signup</a></p>
                             </div>
                         </div>
                         <div class="signup">
-                            <form>
-                                <input type="text" class="email" placeholder="Enter email / mobile" required="required"
-                                       pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?"/>
-                                <input type="password" placeholder="Password" required="required" pattern=".{6,}"
-                                       title="Minimum 6 characters required" autocomplete="off"/>
-                                <input type="submit" value="LOGIN"/>
+                            <form action="user/login" method="post" id="login-form">
+                                <input type="text" placeholder="用户名" name="userTel" required="required"/>
+                                <input type="password" placeholder="密码" name="userPass" required="required" pattern=".{6,}" title="Minimum 6 characters required"/>
+                                <input type="submit" value="登录"/>
                             </form>
                             <div class="forgot">
                                 <a href="#">Forgot password ?</a>

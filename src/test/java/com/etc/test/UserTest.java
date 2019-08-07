@@ -32,4 +32,18 @@ public class UserTest {
         Users users = mapper.checkTelExist("18179037768");
         System.out.println(users.toString());
     }
+    @Test
+    public void testselectByPrimaryKey(){
+        Users users = mapper.selectByPrimaryKey(1);
+        System.out.println(users);
+    }
+
+    @Test
+    public void testSelectUserByUsernameAndPass(){
+        Users users = new Users();
+        users.setUserTel("15387900663");
+        users.setUserPass("123456");
+        Users users1 = mapper.selectUserByUsernameAndPass(users);
+        System.out.println(users1.toString());
+    }
 }
