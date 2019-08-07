@@ -56,7 +56,7 @@
     </trim>
   </insert>
 
-  <update id="updateByExampleSelective" parameterType="map">
+  <!--<update id="updateByExampleSelective" parameterType="map">
     update regions
     <set>
       <if test="record.regionId != null">
@@ -72,7 +72,7 @@
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
+  </update>-->
 
   <update id="updateByPrimaryKeySelective" parameterType="com.etc.pojo.Regions">
     update regions

@@ -86,7 +86,7 @@
     </trim>
   </insert>
 
-  <update id="updateByExampleSelective" parameterType="map">
+  <!--<update id="updateByExampleSelective" parameterType="map">
     update users
     <set>
       <if test="record.userId != null">
@@ -111,9 +111,9 @@
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
+  </update>-->
 
-  <update id="updateByExampleWithBLOBs" parameterType="map">
+  <!--<update id="updateByExampleWithBLOBs" parameterType="map">
     update users
     set user_id = #{record.userId,jdbcType=INTEGER},
       user_name = #{record.userName,jdbcType=VARCHAR},
@@ -124,7 +124,7 @@
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
+  </update>-->
 
   <update id="updateByPrimaryKeySelective" parameterType="com.etc.pojo.Users">
     update users
