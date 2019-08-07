@@ -60,4 +60,16 @@ public class Users {
     public void setUserAbout(String userAbout) {
         this.userAbout = userAbout == null ? null : userAbout.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", userPass='" + userPass + '\'' +
+                ", userTel='" + userTel + '\'' +
+                ", userImg='" + userImg + '\'' +
+                ", userAbout='" + userAbout + '\'' +
+                '}';
+    }
 }

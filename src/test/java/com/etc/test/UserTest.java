@@ -26,4 +26,10 @@ public class UserTest {
         users.setUserAbout("牛的一批");
         mapper.insert(users);
     }
+
+    @Test
+    public void testCheckTelExist(){
+        Users users = mapper.checkTelExist("18179037768");
+        System.out.println(users.toString());
+    }
 }

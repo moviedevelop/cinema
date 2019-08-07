@@ -17,4 +17,6 @@ public interface UsersMapper {
     int updateByPrimaryKeyWithBLOBs(Users record);
 
     int updateByPrimaryKey(Users record);
+
+    Users checkTelExist(String tel);
 }
