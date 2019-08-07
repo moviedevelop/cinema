@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.dao.CinemasMapper">
+  <resultMap id="BaseResultMap" type="com.etc.pojo.Cinemas">
+    <id column="cinema_id" jdbcType="INTEGER" property="cinemaId" />
+    <result column="cinema_name" jdbcType="VARCHAR" property="cinemaName" />
+    <result column="cinema_city" jdbcType="INTEGER" property="cinemaCity" />
+    <result column="cinema_area" jdbcType="INTEGER" property="cinemaArea" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.etc.pojo.Cinemas">
+    <result column="cinema_address" jdbcType="LONGVARCHAR" property="cinemaAddress" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    cinema_id, cinema_name, cinema_city, cinema_area
+  </sql>
+  <sql id="Blob_Column_List">
+    cinema_address
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from cinemas
+    where cinema_id = #{cinemaId,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cinemas
+    where cinema_id = #{cinemaId,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.etc.pojo.Cinemas">
+    insert into cinemas (cinema_id, cinema_name, cinema_city, 
+      cinema_area, cinema_address)
+    values (#{cinemaId,jdbcType=INTEGER}, #{cinemaName,jdbcType=VARCHAR}, #{cinemaCity,jdbcType=INTEGER}, 
+      #{cinemaArea,jdbcType=INTEGER}, #{cinemaAddress,jdbcType=LONGVARCHAR})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.etc.pojo.Cinemas">
+    insert into cinemas
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cinemaId != null">
+        cinema_id,
+      </if>
+      <if test="cinemaName != null">
+        cinema_name,
+      </if>
+      <if test="cinemaCity != null">
+        cinema_city,
+      </if>
+      <if test="cinemaArea != null">
+        cinema_area,
+      </if>
+      <if test="cinemaAddress != null">
+        cinema_address,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cinemaId != null">
+        #{cinemaId,jdbcType=INTEGER},
+      </if>
+      <if test="cinemaName != null">
+        #{cinemaName,jdbcType=VARCHAR},
+      </if>
+      <if test="cinemaCity != null">
+        #{cinemaCity,jdbcType=INTEGER},
+      </if>
+      <if test="cinemaArea != null">
+        #{cinemaArea,jdbcType=INTEGER},
+      </if>
+      <if test="cinemaAddress != null">
+        #{cinemaAddress,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.pojo.Cinemas">
+    update cinemas
+    <set>
+      <if test="cinemaName != null">
+        cinema_name = #{cinemaName,jdbcType=VARCHAR},
+      </if>
+      <if test="cinemaCity != null">
+        cinema_city = #{cinemaCity,jdbcType=INTEGER},
+      </if>
+      <if test="cinemaArea != null">
+        cinema_area = #{cinemaArea,jdbcType=INTEGER},
+      </if>
+      <if test="cinemaAddress != null">
+        cinema_address = #{cinemaAddress,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where cinema_id = #{cinemaId,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.etc.pojo.Cinemas">
+    update cinemas
+    set cinema_name = #{cinemaName,jdbcType=VARCHAR},
+      cinema_city = #{cinemaCity,jdbcType=INTEGER},
+      cinema_area = #{cinemaArea,jdbcType=INTEGER},
+      cinema_address = #{cinemaAddress,jdbcType=LONGVARCHAR}
+    where cinema_id = #{cinemaId,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.etc.pojo.Cinemas">
+    update cinemas
+    set cinema_name = #{cinemaName,jdbcType=VARCHAR},
+      cinema_city = #{cinemaCity,jdbcType=INTEGER},
+      cinema_area = #{cinemaArea,jdbcType=INTEGER}
+    where cinema_id = #{cinemaId,jdbcType=INTEGER}
+  </update>
+</mapper>
