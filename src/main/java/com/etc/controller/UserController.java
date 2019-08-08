@@ -5,8 +5,6 @@ import com.etc.pojo.Users;
 import com.etc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,15 +40,16 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public  String login(Users users, HttpSession session, Model model) {
+    public  ModelAndView login(Users users, HttpSession session, ModelAndView model) {
         Users loginUser = userService.selectUserByUsernameAndPass(users);
         if (loginUser == null) {
             String str = "用户名或密码错误！";
-            model.addAttribute("str", str);
-            return "redirect:../index";
+            model.addObject("errorMessage",str);
+            return model;
         } else {
             session.setAttribute("userId", loginUser.getUserId());
-            return "redirect:../index";
+            model.setViewName("redirect:../index");
+            return model;
         }
     }
 }
