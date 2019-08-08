@@ -40,14 +40,22 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public  ModelAndView login(Users users, HttpSession session, ModelAndView model) {
+    public ModelAndView login(ModelAndView modelAndView){
+        modelAndView.setViewName("login");
+        return modelAndView;
+    }
+
+    @RequestMapping("/dologin")
+    public  ModelAndView doLogin(Users users, HttpSession session, ModelAndView model) {
         Users loginUser = userService.selectUserByUsernameAndPass(users);
         if (loginUser == null) {
             String str = "用户名或密码错误！";
             model.addObject("errorMessage",str);
+            model.setViewName("login");
             return model;
         } else {
             session.setAttribute("userId", loginUser.getUserId());
+            session.setAttribute("userName",loginUser.getUserName());
             model.setViewName("redirect:../index");
             return model;
         }

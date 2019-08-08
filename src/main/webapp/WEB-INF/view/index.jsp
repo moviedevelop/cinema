@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -48,7 +49,7 @@
                     <a href="/cinema/upload.jsp">Upload</a>
                 </div>
                 <div class="signin">
-                    <a href="#small-dialog3" class="play-icon popup-with-zoom-anim">注 册</a>
+                    <a href="#small-dialog3" style="<c:if test="${sessionScope.userId != null}">display: none;</c:if>" class="play-icon popup-with-zoom-anim">注 册</a>
                     <!-- pop-up-box -->
                     <script type="text/javascript" src="/cinema/js/modernizr.custom.min.js"></script>
                     <link href="/cinema/css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
@@ -213,32 +214,8 @@
                     </script>
                 </div>
                 <div class="signin">
-                    <a href="#small-dialog" class="play-icon popup-with-zoom-anim">登 录</a>
-                    <div id="small-dialog" class="mfp-hide">
-                        <h3>Login</h3>
-                        <div class="social-sits">
-                            <div class="facebook-button">
-                                <a href="#">Connect with Facebook</a>
-                            </div>
-                            <div class="chrome-button">
-                                <a href="#">Connect with Google</a>
-                            </div>
-                            <div class="button-bottom">
-                                <p>New account? <a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Signup</a></p>
-                            </div>
-                        </div>
-                        <div class="signup">
-                            <form action="user/login" method="post" id="login-form">
-                                <input type="text" placeholder="用户名" name="userTel" required="required"/>
-                                <input type="password" placeholder="密码" name="userPass" required="required" pattern=".{6,}" title="Minimum 6 characters required"/>
-                                <input type="submit" value="登录"/>
-                            </form>
-                            <div class="forgot">
-                                <a href="#">Forgot password ?</a>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                    <span style="cursor: pointer;<c:if test="${sessionScope.userId != null}">display: none;</c:if>" onclick="window.location.href='user/login'">登 录</span>
+                    <span style="<c:if test="${sessionScope.userId == null}">display: none;</c:if>">${sessionScope.userName}</span>
                 </div>
                 <div class="clearfix"></div>
             </div>
