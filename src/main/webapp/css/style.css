@@ -109,8 +109,8 @@ form.navbar-form.navbar-right {
   float: left;
   margin: 1.1em 0 0 1em;
 }
-.signin a,span{
-	padding: 8px 20px;
+.signin a{
+    padding: 8px 20px;
     background: #21DEEF;
     color: #FFF;
     font-size: 14px;
@@ -121,7 +121,36 @@ form.navbar-form.navbar-right {
     -o-border-radius: 3px;
     -ms-border-radius: 3px;
 }
-.signin a:hover,span:hover{
+.signin span{
+    padding: 8px 20px;
+    background: #21DEEF;
+    color: #FFF;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+}
+span{
+    padding: 8px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+}
+.clck span:hover{
+    cursor: default;
+    text-decoration:none;
+    background:none;
+}
+
+
+.signin a:hover{
 	text-decoration:none;
 	color:#272C2E;
 	background:#F7F7F7;
@@ -507,8 +536,8 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 }
 .clck {
   position: absolute;
-  bottom: 1%;
-  right: 9%;
+  bottom: 2%;
+  right: 11%;
   display: block;
   z-index: 9;
 }

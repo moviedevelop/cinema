@@ -3,7 +3,10 @@ package com.etc.dao;
 import com.etc.pojo.Movies;
 import com.etc.pojo.MoviesWithBLOBs;
 
+import java.util.List;
+
 public interface MoviesMapper {
+
 
     int deleteByPrimaryKey(Integer movieId);
 
@@ -18,4 +21,6 @@ public interface MoviesMapper {
     int updateByPrimaryKeyWithBLOBs(MoviesWithBLOBs record);
 
     int updateByPrimaryKey(Movies record);
+
+    List<MoviesWithBLOBs> selectRecentMovie();
 }

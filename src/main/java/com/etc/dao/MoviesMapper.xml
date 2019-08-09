@@ -4,15 +4,16 @@
   <resultMap id="BaseResultMap" type="com.etc.pojo.Movies">
     <id column="movie_id" jdbcType="INTEGER" property="movieId" />
     <result column="movie_name" jdbcType="VARCHAR" property="movieName" />
-    <result column="movie_time" jdbcType="INTEGER" property="movieTime" />
-    <result column="movie_date" jdbcType="DATE" property="movieDate" />
+    <result column="movie_time" jdbcType="VARCHAR" property="movieTime" />
+    <result column="movie_date" jdbcType="VARCHAR" property="movieDate" />
     <result column="movie_area" jdbcType="VARCHAR" property="movieArea" />
     <result column="movie_lang" jdbcType="VARCHAR" property="movieLang" />
     <result column="movie_director" jdbcType="VARCHAR" property="movieDirector" />
     <result column="movie_writer" jdbcType="VARCHAR" property="movieWriter" />
     <result column="movie_actor" jdbcType="VARCHAR" property="movieActor" />
     <result column="movie_type" jdbcType="VARCHAR" property="movieType" />
-    <result column="movie_box" jdbcType="BIGINT" property="movieBox" />
+    <result column="movie_mark" jdbcType="REAL" property="movieMark" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyWord" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.etc.pojo.MoviesWithBLOBs">
     <result column="movie_img" jdbcType="LONGVARCHAR" property="movieImg" />
@@ -21,11 +22,15 @@
 
   <sql id="Base_Column_List">
     movie_id, movie_name, movie_time, movie_date, movie_area, movie_lang, movie_director, 
-    movie_writer, movie_actor, movie_type, movie_box
+    movie_writer, movie_actor, movie_type, movie_mark, keyword
   </sql>
   <sql id="Blob_Column_List">
     movie_img, description
   </sql>
+
+  <select id="selectRecentMovie" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img FROM movies ORDER BY movie_date DESC LIMIT 0,4
+  </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 
@@ -35,7 +40,6 @@
     from movies
     where movie_id = #{movieId,jdbcType=INTEGER}
   </select>
-
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from movies
     where movie_id = #{movieId,jdbcType=INTEGER}
@@ -45,16 +49,15 @@
     insert into movies (movie_id, movie_name, movie_time, 
       movie_date, movie_area, movie_lang, 
       movie_director, movie_writer, movie_actor, 
-      movie_type, movie_box, movie_img, 
-      description)
-    values (#{movieId,jdbcType=INTEGER}, #{movieName,jdbcType=VARCHAR}, #{movieTime,jdbcType=INTEGER}, 
-      #{movieDate,jdbcType=DATE}, #{movieArea,jdbcType=VARCHAR}, #{movieLang,jdbcType=VARCHAR}, 
+      movie_type, movie_mark, keyword,
+      movie_img, description)
+    values (#{movieId,jdbcType=INTEGER}, #{movieName,jdbcType=VARCHAR}, #{movieTime,jdbcType=VARCHAR}, 
+      #{movieDate,jdbcType=VARCHAR}, #{movieArea,jdbcType=VARCHAR}, #{movieLang,jdbcType=VARCHAR}, 
       #{movieDirector,jdbcType=VARCHAR}, #{movieWriter,jdbcType=VARCHAR}, #{movieActor,jdbcType=VARCHAR}, 
-      #{movieType,jdbcType=VARCHAR}, #{movieBox,jdbcType=BIGINT}, #{movieImg,jdbcType=LONGVARCHAR}, 
-      #{description,jdbcType=LONGVARCHAR})
+      #{movieType,jdbcType=VARCHAR}, #{movieMark,jdbcType=REAL}, #{keyWord,jdbcType=VARCHAR},
+      #{movieImg,jdbcType=LONGVARCHAR}, #{description,jdbcType=LONGVARCHAR})
   </insert>
-
-  <insert id="insertSelective" parameterType="com.etc.pojo.MoviesWithBLOBs">
+  <insert id="insertSelective" parameterType="com.etc.pojo.Movies">
     insert into movies
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="movieId != null">
@@ -87,8 +90,11 @@
       <if test="movieType != null">
         movie_type,
       </if>
-      <if test="movieBox != null">
-        movie_box,
+      <if test="movieMark != null">
+        movie_mark,
+      </if>
+      <if test="keyWord != null">
+        keyword,
       </if>
       <if test="movieImg != null">
         movie_img,
@@ -105,10 +111,10 @@
         #{movieName,jdbcType=VARCHAR},
       </if>
       <if test="movieTime != null">
-        #{movieTime,jdbcType=INTEGER},
+        #{movieTime,jdbcType=VARCHAR},
       </if>
       <if test="movieDate != null">
-        #{movieDate,jdbcType=DATE},
+        #{movieDate,jdbcType=VARCHAR},
       </if>
       <if test="movieArea != null">
         #{movieArea,jdbcType=VARCHAR},
@@ -128,8 +134,11 @@
       <if test="movieType != null">
         #{movieType,jdbcType=VARCHAR},
       </if>
-      <if test="movieBox != null">
-        #{movieBox,jdbcType=BIGINT},
+      <if test="movieMark != null">
+        #{movieMark,jdbcType=REAL},
+      </if>
+      <if test="keyWord != null">
+        #{keyWord,jdbcType=VARCHAR},
       </if>
       <if test="movieImg != null">
         #{movieImg,jdbcType=LONGVARCHAR},
@@ -140,54 +149,6 @@
     </trim>
   </insert>
 
-  <!--<update id="updateByExampleSelective" parameterType="map">
-    update movies
-    <set>
-      <if test="record.movieId != null">
-        movie_id = #{record.movieId,jdbcType=INTEGER},
-      </if>
-      <if test="record.movieName != null">
-        movie_name = #{record.movieName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.movieTime != null">
-        movie_time = #{record.movieTime,jdbcType=INTEGER},
-      </if>
-      <if test="record.movieDate != null">
-        movie_date = #{record.movieDate,jdbcType=DATE},
-      </if>
-      <if test="record.movieArea != null">
-        movie_area = #{record.movieArea,jdbcType=VARCHAR},
-      </if>
-      <if test="record.movieLang != null">
-        movie_lang = #{record.movieLang,jdbcType=VARCHAR},
-      </if>
-      <if test="record.movieDirector != null">
-        movie_director = #{record.movieDirector,jdbcType=VARCHAR},
-      </if>
-      <if test="record.movieWriter != null">
-        movie_writer = #{record.movieWriter,jdbcType=VARCHAR},
-      </if>
-      <if test="record.movieActor != null">
-        movie_actor = #{record.movieActor,jdbcType=VARCHAR},
-      </if>
-      <if test="record.movieType != null">
-        movie_type = #{record.movieType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.movieBox != null">
-        movie_box = #{record.movieBox,jdbcType=BIGINT},
-      </if>
-      <if test="record.movieImg != null">
-        movie_img = #{record.movieImg,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="record.description != null">
-        description = #{record.description,jdbcType=LONGVARCHAR},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>-->
-
   <update id="updateByPrimaryKeySelective" parameterType="com.etc.pojo.MoviesWithBLOBs">
     update movies
     <set>
@@ -195,10 +156,10 @@
         movie_name = #{movieName,jdbcType=VARCHAR},
       </if>
       <if test="movieTime != null">
-        movie_time = #{movieTime,jdbcType=INTEGER},
+        movie_time = #{movieTime,jdbcType=VARCHAR},
       </if>
       <if test="movieDate != null">
-        movie_date = #{movieDate,jdbcType=DATE},
+        movie_date = #{movieDate,jdbcType=VARCHAR},
       </if>
       <if test="movieArea != null">
         movie_area = #{movieArea,jdbcType=VARCHAR},
@@ -218,8 +179,11 @@
       <if test="movieType != null">
         movie_type = #{movieType,jdbcType=VARCHAR},
       </if>
-      <if test="movieBox != null">
-        movie_box = #{movieBox,jdbcType=BIGINT},
+      <if test="movieMark != null">
+        movie_mark = #{movieMark,jdbcType=REAL},
+      </if>
+      <if test="keyWord != null">
+        keyword = #{keyWord,jdbcType=VARCHAR},
       </if>
       <if test="movieImg != null">
         movie_img = #{movieImg,jdbcType=LONGVARCHAR},
@@ -230,36 +194,36 @@
     </set>
     where movie_id = #{movieId,jdbcType=INTEGER}
   </update>
-
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.etc.pojo.MoviesWithBLOBs">
     update movies
     set movie_name = #{movieName,jdbcType=VARCHAR},
-      movie_time = #{movieTime,jdbcType=INTEGER},
-      movie_date = #{movieDate,jdbcType=DATE},
+      movie_time = #{movieTime,jdbcType=VARCHAR},
+      movie_date = #{movieDate,jdbcType=VARCHAR},
       movie_area = #{movieArea,jdbcType=VARCHAR},
       movie_lang = #{movieLang,jdbcType=VARCHAR},
       movie_director = #{movieDirector,jdbcType=VARCHAR},
       movie_writer = #{movieWriter,jdbcType=VARCHAR},
       movie_actor = #{movieActor,jdbcType=VARCHAR},
       movie_type = #{movieType,jdbcType=VARCHAR},
-      movie_box = #{movieBox,jdbcType=BIGINT},
+      movie_mark = #{movieMark,jdbcType=REAL},
+      keyword = #{keyWord,jdbcType=VARCHAR},
       movie_img = #{movieImg,jdbcType=LONGVARCHAR},
       description = #{description,jdbcType=LONGVARCHAR}
     where movie_id = #{movieId,jdbcType=INTEGER}
   </update>
-
   <update id="updateByPrimaryKey" parameterType="com.etc.pojo.Movies">
     update movies
     set movie_name = #{movieName,jdbcType=VARCHAR},
-      movie_time = #{movieTime,jdbcType=INTEGER},
-      movie_date = #{movieDate,jdbcType=DATE},
+      movie_time = #{movieTime,jdbcType=VARCHAR},
+      movie_date = #{movieDate,jdbcType=VARCHAR},
       movie_area = #{movieArea,jdbcType=VARCHAR},
       movie_lang = #{movieLang,jdbcType=VARCHAR},
       movie_director = #{movieDirector,jdbcType=VARCHAR},
       movie_writer = #{movieWriter,jdbcType=VARCHAR},
       movie_actor = #{movieActor,jdbcType=VARCHAR},
       movie_type = #{movieType,jdbcType=VARCHAR},
-      movie_box = #{movieBox,jdbcType=BIGINT}
+      movie_mark = #{movieMark,jdbcType=REAL},
+      keyword = #{keyWord,jdbcType=VARCHAR}
     where movie_id = #{movieId,jdbcType=INTEGER}
   </update>
 </mapper>

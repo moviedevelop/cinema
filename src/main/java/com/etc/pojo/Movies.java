@@ -1,15 +1,13 @@
 package com.etc.pojo;
 
-import java.util.Date;
-
 public class Movies {
     private Integer movieId;
 
     private String movieName;
 
-    private Integer movieTime;
+    private String movieTime;
 
-    private Date movieDate;
+    private String movieDate;
 
     private String movieArea;
 
@@ -23,7 +21,10 @@ public class Movies {
 
     private String movieType;
 
-    private Long movieBox;
+    private Float movieMark;
+
+    private String keyWord;
+
 
     public Integer getMovieId() {
         return movieId;
@@ -38,22 +39,22 @@ public class Movies {
     }
 
     public void setMovieName(String movieName) {
-        this.movieName = movieName == null ? null : movieName.trim();
+        this.movieName = movieName;
     }
 
-    public Integer getMovieTime() {
+    public String getMovieTime() {
         return movieTime;
     }
 
-    public void setMovieTime(Integer movieTime) {
+    public void setMovieTime(String movieTime) {
         this.movieTime = movieTime;
     }
 
-    public Date getMovieDate() {
+    public String getMovieDate() {
         return movieDate;
     }
 
-    public void setMovieDate(Date movieDate) {
+    public void setMovieDate(String movieDate) {
         this.movieDate = movieDate;
     }
 
@@ -62,7 +63,7 @@ public class Movies {
     }
 
     public void setMovieArea(String movieArea) {
-        this.movieArea = movieArea == null ? null : movieArea.trim();
+        this.movieArea = movieArea;
     }
 
     public String getMovieLang() {
@@ -70,7 +71,7 @@ public class Movies {
     }
 
     public void setMovieLang(String movieLang) {
-        this.movieLang = movieLang == null ? null : movieLang.trim();
+        this.movieLang = movieLang;
     }
 
     public String getMovieDirector() {
@@ -78,7 +79,7 @@ public class Movies {
     }
 
     public void setMovieDirector(String movieDirector) {
-        this.movieDirector = movieDirector == null ? null : movieDirector.trim();
+        this.movieDirector = movieDirector;
     }
 
     public String getMovieWriter() {
@@ -86,7 +87,7 @@ public class Movies {
     }
 
     public void setMovieWriter(String movieWriter) {
-        this.movieWriter = movieWriter == null ? null : movieWriter.trim();
+        this.movieWriter = movieWriter;
     }
 
     public String getMovieActor() {
@@ -94,7 +95,7 @@ public class Movies {
     }
 
     public void setMovieActor(String movieActor) {
-        this.movieActor = movieActor == null ? null : movieActor.trim();
+        this.movieActor = movieActor;
     }
 
     public String getMovieType() {
@@ -102,14 +103,40 @@ public class Movies {
     }
 
     public void setMovieType(String movieType) {
-        this.movieType = movieType == null ? null : movieType.trim();
+        this.movieType = movieType;
     }
 
-    public Long getMovieBox() {
-        return movieBox;
+    public Float getMovieMark() {
+        return movieMark;
     }
 
-    public void setMovieBox(Long movieBox) {
-        this.movieBox = movieBox;
+    public void setMovieMark(Float movieMark) {
+        this.movieMark = movieMark;
+    }
+
+    public String getKeyWord() {
+        return keyWord;
+    }
+
+    public void setKeyWord(String keyWord) {
+        this.keyWord = keyWord;
+    }
+
+    @Override
+    public String toString() {
+        return "Movies{" +
+                "movieId=" + movieId +
+                ", movieName='" + movieName + '\'' +
+                ", movieTime='" + movieTime + '\'' +
+                ", movieDate='" + movieDate + '\'' +
+                ", movieArea='" + movieArea + '\'' +
+                ", movieLang='" + movieLang + '\'' +
+                ", movieDirector='" + movieDirector + '\'' +
+                ", movieWriter='" + movieWriter + '\'' +
+                ", movieActor='" + movieActor + '\'' +
+                ", movieType='" + movieType + '\'' +
+                ", movieMark=" + movieMark +
+                ", keyWord='" + keyWord + '\'' +
+                '}';
     }
 }

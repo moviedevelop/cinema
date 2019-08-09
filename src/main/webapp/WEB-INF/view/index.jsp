@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
@@ -306,63 +307,26 @@
             <div class="recommended-info">
                 <h3>Recent Videos</h3>
             </div>
-            <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
+            <c:forEach items="${recentMovies}" var="i">
+            <div class="col-md-3 resent-grid recommended-grid slider-top-grids">
                 <div class="resent-grid-img recommended-grid-img">
-                    <a href="/cinema/single.jsp"><img src="/cinema/images/t1.jpg" alt=""/></a>
+                    <a href="/cinema/single.jsp"><img width="275px" height="420px" src="images?movieImg=${i.movieImg}" alt=""/></a>
                     <div class="time">
-                        <p>3:04</p>
+                        <p>${i.movieTime}</p>
                     </div>
                     <div class="clck">
                         <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                     </div>
                 </div>
                 <div class="resent-grid-info recommended-grid-info">
-                    <h3><a href="/cinema/single.jsp" class="title title-info">Pellentesque vitae pulvinar tortor nullam interdum
-                        metus a imperdiet</a></h3>
+                    <h3><a href="/cinema/single.jsp" class="title title-info">${i.movieName}</a></h3>
                     <ul>
-                        <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                        <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
+                        <li><p class="author author-info"><a href="#" class="author">${i.movieArea}</a></p></li>
+                        <li class="right-list"><p class="views views-info">${i.movieLang}</p></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                <div class="resent-grid-img recommended-grid-img">
-                    <a href="/cinema/single.jsp"><img src="/cinema/images/t2.jpg" alt=""/></a>
-                    <div class="time">
-                        <p>7:23</p>
-                    </div>
-                    <div class="clck">
-                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                    </div>
-                </div>
-                <div class="resent-grid-info recommended-grid-info">
-                    <h3><a href="/cinema/single.jsp" class="title title-info">Interdum pellentesque vitae pulvinar tortor nullam
-                        metus a imperdiet</a></h3>
-                    <ul>
-                        <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                        <li class="right-list"><p class="views views-info">4,200 views</p></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4 resent-grid recommended-grid slider-top-grids">
-                <div class="resent-grid-img recommended-grid-img">
-                    <a href="/cinema/single.jsp"><img src="/cinema/images/t3.jpg" alt=""/></a>
-                    <div class="time">
-                        <p>4:04</p>
-                    </div>
-                    <div class="clck">
-                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                    </div>
-                </div>
-                <div class="resent-grid-info recommended-grid-info">
-                    <h3><a href="/cinema/single.jsp" class="title title-info">Nullam interdum metus a imperdiet pellentesque
-                        vitae pulvinar tortor</a></h3>
-                    <ul>
-                        <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                        <li class="right-list"><p class="views views-info">71,174 views</p></li>
-                    </ul>
-                </div>
-            </div>
+            </c:forEach>
             <div class="clearfix"></div>
         </div>
         <div class="recommended">
