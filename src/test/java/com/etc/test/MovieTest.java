@@ -32,4 +32,12 @@ public class MovieTest {
             System.out.println(movie.toString());
         }
     }
+
+    @Test
+    public void selectMovieOrderByMark(){
+        List<MoviesWithBLOBs> movies = mapper.selectMovieOrderByMark();
+        for (MoviesWithBLOBs movie : movies){
+            System.out.println(movie.toString());
+        }
+    }
 }

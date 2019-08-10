@@ -29,7 +29,11 @@
   </sql>
 
   <select id="selectRecentMovie" resultMap="ResultMapWithBLOBs">
-    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img FROM movies ORDER BY movie_date DESC LIMIT 0,4
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img FROM movies ORDER BY movie_date DESC LIMIT 0,6
+  </select>
+
+  <select id="selectMovieOrderByMark" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies ORDER BY movie_mark DESC LIMIT 0,8
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">

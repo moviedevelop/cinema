@@ -24,7 +24,9 @@ public class IndexController {
     @RequestMapping("/index")
     public ModelAndView toIndex(ModelAndView modelAndView){
         List<MoviesWithBLOBs> recentMovies = movieService.selectRecentMovie();
+        List<MoviesWithBLOBs> highMarkMovies = movieService.selectMovieOrderByMark();
         modelAndView.addObject("recentMovies",recentMovies);
+        modelAndView.addObject("highMarkMovies",highMarkMovies);
         modelAndView.setViewName("index");
         return modelAndView;
     }

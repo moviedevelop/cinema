@@ -12,4 +12,6 @@ public interface MovieService {
     int insertSelective(MoviesWithBLOBs record);
 
     MoviesWithBLOBs selectByPrimaryKey(Integer movieId);
+
+    List<MoviesWithBLOBs> selectMovieOrderByMark();
 }

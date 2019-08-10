@@ -50,7 +50,8 @@
                     <a href="/cinema/upload.jsp">Upload</a>
                 </div>
                 <div class="signin">
-                    <a href="#small-dialog3" style="<c:if test="${sessionScope.userId != null}">display: none;</c:if>" class="play-icon popup-with-zoom-anim">注 册</a>
+                    <a href="#small-dialog3" style="<c:if test="${sessionScope.userId != null}">display: none;</c:if>"
+                       class="play-icon popup-with-zoom-anim">注 册</a>
                     <!-- pop-up-box -->
                     <script type="text/javascript" src="/cinema/js/modernizr.custom.min.js"></script>
                     <link href="/cinema/css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
@@ -67,13 +68,15 @@
                                 <a href="#">Connect with Google</a>
                             </div>
                             <div class="button-bottom">
-                                <p>Already have an account? <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></p>
+                                <p>Already have an account? <a href="#small-dialog"
+                                                               class="play-icon popup-with-zoom-anim">Login</a></p>
                             </div>
                         </div>
                         <div class="signup">
                             <form action="user/doreg" method="post" id="reg-form">
                                 <input type="text" placeholder="用户名" name="userName" required="required"/>
-                                <input type="password" placeholder="密码" name="userPass" required="required" pattern=".{6,}" title="Minimum 6 characters required"/>
+                                <input type="password" placeholder="密码" name="userPass" required="required"
+                                       pattern=".{6,}" title="Minimum 6 characters required"/>
                                 <input type="text" onblur="doajax(this)" placeholder="手机号" name="userTel"/>
                                 <p style="display: none" id="error-message"></p>
                                 <input type="button" onclick="dosubmit()" value="注册"/>
@@ -82,13 +85,13 @@
                         <script>
                             function doajax(th) {
                                 var data = th.value;
-                                $.post("user/check",{tel:data},function (str) {
+                                $.post("user/check", {tel: data}, function (str) {
                                     var errors = $("#error-message");
-                                    if (str.message != null && str.message != ""){
-                                        errors.css({"display":"block","color":"#FF0000"});
+                                    if (str.message != null && str.message != "") {
+                                        errors.css({"display": "block", "color": "#FF0000"});
                                         errors.text(str.message);
-                                    }else {
-                                        errors.css({"display":"none"});
+                                    } else {
+                                        errors.css({"display": "none"});
                                         errors.text("");
                                     }
                                 })
@@ -96,7 +99,7 @@
 
                             function dosubmit() {
                                 var errors = $("#error-message");
-                                if(errors.text() == "手机号已被注册"){
+                                if (errors.text() == "手机号已被注册") {
                                     return;
                                 }
                                 $("#reg-form").submit();
@@ -114,7 +117,8 @@
                                 <a href="#">Connect with Google</a>
                             </div>
                             <div class="button-bottom">
-                                <p>Already have an account? <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></p>
+                                <p>Already have an account? <a href="#small-dialog"
+                                                               class="play-icon popup-with-zoom-anim">Login</a></p>
                             </div>
                         </div>
                         <div class="signup">
@@ -215,8 +219,10 @@
                     </script>
                 </div>
                 <div class="signin">
-                    <span style="cursor: pointer;<c:if test="${sessionScope.userId != null}">display: none;</c:if>" onclick="window.location.href='user/login'">登 录</span>
-                    <span style="<c:if test="${sessionScope.userId == null}">display: none;</c:if>">${sessionScope.userName}</span>
+                    <span style="cursor: pointer;<c:if test="${sessionScope.userId != null}">display: none;</c:if>"
+                          onclick="window.location.href='user/login'">登 录</span>
+                    <span style="<c:if
+                            test="${sessionScope.userId == null}">display: none;</c:if>">${sessionScope.userName}</span>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -237,10 +243,12 @@
         <ul class="nav nav-sidebar">
             <li class="active"><a href="index.jsp" class="home-icon"><span class="glyphicon glyphicon-home"
                                                                            aria-hidden="true"></span>Home</a></li>
-            <li><a href="/cinema/shows.jsp" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-blackboard"
-                                                                  aria-hidden="true"></span>TV Shows</a></li>
-            <li><a href="/cinema/history.jsp" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass"
-                                                                   aria-hidden="true"></span>History</a></li>
+            <li><a href="/cinema/shows.jsp" class="user-icon"><span
+                    class="glyphicon glyphicon-home glyphicon-blackboard"
+                    aria-hidden="true"></span>TV Shows</a></li>
+            <li><a href="/cinema/history.jsp" class="sub-icon"><span
+                    class="glyphicon glyphicon-home glyphicon-hourglass"
+                    aria-hidden="true"></span>History</a></li>
             <li><a href="#" class="menu1"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Movies<span
                     class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
             <ul class="cl-effect-2">
@@ -274,9 +282,9 @@
                 });
             </script>
             <li><a href="/cinema/movies.jsp" class="song-icon"><span class="glyphicon glyphicon-music"
-                                                                   aria-hidden="true"></span>Songs</a></li>
+                                                                     aria-hidden="true"></span>Songs</a></li>
             <li><a href="/cinema/news.jsp" class="news-icon"><span class="glyphicon glyphicon-envelope"
-                                                                 aria-hidden="true"></span>News</a></li>
+                                                                   aria-hidden="true"></span>News</a></li>
         </ul>
         <!-- script-for-menu -->
         <script>
@@ -305,34 +313,34 @@
     <div class="main-grids">
         <div class="top-grids">
             <div class="recommended-info">
-                <h3>Recent Videos</h3>
+                <h3>正在热映</h3>
             </div>
             <c:forEach items="${recentMovies}" var="i">
-            <div class="col-md-3 resent-grid recommended-grid slider-top-grids">
-                <div class="resent-grid-img recommended-grid-img">
-                    <a href="/cinema/single.jsp"><img width="275px" height="420px" src="images?movieImg=${i.movieImg}" alt=""/></a>
-                    <div class="time">
-                        <p>${i.movieTime}</p>
+                <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
+                    <div class="resent-grid-img recommended-grid-img">
+                        <a href="/cinema/single.jsp"><img src="images?movieImg=${i.movieImg}" height="360px" alt=""/></a>
+                        <div class="time">
+                            <p>${i.movieTime}</p>
+                        </div>
+                        <div class="clck">
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                        </div>
                     </div>
-                    <div class="clck">
-                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    <div class="resent-grid-info recommended-grid-info">
+                        <h3><a href="/cinema/single.jsp" class="title title-info">${i.movieName}</a></h3>
+                        <ul>
+                            <li><p class="author author-info"><a href="#" class="author">${i.movieArea}</a></p></li>
+                            <li class="right-list"><p class="views views-info">${i.movieLang}</p></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="resent-grid-info recommended-grid-info">
-                    <h3><a href="/cinema/single.jsp" class="title title-info">${i.movieName}</a></h3>
-                    <ul>
-                        <li><p class="author author-info"><a href="#" class="author">${i.movieArea}</a></p></li>
-                        <li class="right-list"><p class="views views-info">${i.movieLang}</p></li>
-                    </ul>
-                </div>
-            </div>
             </c:forEach>
             <div class="clearfix"></div>
         </div>
         <div class="recommended">
             <div class="recommended-grids">
                 <div class="recommended-info">
-                    <h3>Animated Cartoon</h3>
+                    <h3>评分最高</h3>
                 </div>
                 <script src="/cinema/js/responsiveslides.min.js"></script>
                 <script>
@@ -359,107 +367,33 @@
                     <ul class="rslides" id="slider3">
                         <li>
                             <div class="animated-grids">
-                                <div class="col-md-3 resent-grid recommended-grid slider-first">
+                                <c:forEach items="${highMarkMovies}" var="i" varStatus="s">
+                                    <c:if test="${s.count <= 6}">
+                                <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                                     <div class="resent-grid-img recommended-grid-img">
-                                        <a href="/cinema/single.jsp"><img src="/cinema/images/c.jpg" alt=""/></a>
+                                        <a href="/cinema/single.jsp"><img height="350px" src="images?movieImg=${i.movieImg}" alt=""/></a>
                                         <div class="time small-time slider-time">
-                                            <p>7:34</p>
+                                            <p>${i.movieTime}</p>
                                         </div>
                                         <div class="clck small-clck">
                                             <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra
-                                            nullam interdum metus</a></h5>
+                                        <h5><a href="/cinema/single.jsp" class="title">${i.movieName}</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
-                                                <p class="author author-info"><a href="#" class="author">John Maniya</a>
-                                                </p>
+                                                <p class="author author-info"><a href="#" class="author">${i.movieArea}</a></p>
                                             </div>
                                             <div class="slid-bottom-grid slid-bottom-right">
-                                                <p class="views views-info">2,114,200 views</p>
+                                                <p class="views views-info">${i.movieLang}</p>
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 resent-grid recommended-grid slider-first">
-                                    <div class="resent-grid-img recommended-grid-img">
-                                        <a href="/cinema/single.jsp"><img src="/cinema/images/c1.jpg" alt=""/></a>
-                                        <div class="time small-time slider-time">
-                                            <p>6:23</p>
-                                        </div>
-                                        <div class="clck small-clck">
-                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus varius viverra
-                                            nullam sit amet viverra</a></h5>
-                                        <div class="slid-bottom-grids">
-                                            <div class="slid-bottom-grid">
-                                                <p class="author author-info"><a href="#" class="author">John Maniya</a>
-                                                </p>
-                                            </div>
-                                            <div class="slid-bottom-grid slid-bottom-right">
-                                                <p class="views views-info">14,200 views</p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 resent-grid recommended-grid slider-first">
-                                    <div class="resent-grid-img recommended-grid-img">
-                                        <a href="/cinema/single.jsp"><img src="/cinema/images/c2.jpg" alt=""/></a>
-                                        <div class="time small-time slider-time">
-                                            <p>2:45</p>
-                                        </div>
-                                        <div class="clck small-clck">
-                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra
-                                            nullam interdum metus</a></h5>
-                                        <div class="slid-bottom-grids">
-                                            <div class="slid-bottom-grid">
-                                                <p class="author author-info"><a href="#" class="author">John Maniya</a>
-                                                </p>
-                                            </div>
-                                            <div class="slid-bottom-grid slid-bottom-right">
-                                                <p class="views views-info">2,114,200 views</p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 resent-grid recommended-grid slider-first">
-                                    <div class="resent-grid-img recommended-grid-img">
-                                        <a href="/cinema/single.jsp"><img src="/cinema/images/c3.jpg" alt=""/></a>
-                                        <div class="time small-time slider-time">
-                                            <p>4:34</p>
-                                        </div>
-                                        <div class="clck small-clck">
-                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam
-                                            varius sit sed viverra</a></h5>
-                                        <div class="slid-bottom-grids">
-                                            <div class="slid-bottom-grid">
-                                                <p class="author author-info"><a href="#" class="author">John Maniya</a>
-                                                </p>
-                                            </div>
-                                            <div class="slid-bottom-grid slid-bottom-right">
-                                                <p class="views views-info">2,114,200 views</p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
+                                    </c:if>
+                                </c:forEach>
                             </div>
                         </li>
                         <li>
@@ -475,7 +409,8 @@
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra viverra nullam
+                                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra viverra
+                                            nullam
                                             nullam interdum metus</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
@@ -489,82 +424,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 resent-grid recommended-grid slider-first">
-                                    <div class="resent-grid-img recommended-grid-img">
-                                        <a href="/cinema/single.jsp"><img src="/cinema/images/c2.jpg" alt=""/></a>
-                                        <div class="time small-time slider-time">
-                                            <p>6:14</p>
-                                        </div>
-                                        <div class="clck small-clck">
-                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam
-                                            varius sit sed viverra</a></h5>
-                                        <div class="slid-bottom-grids">
-                                            <div class="slid-bottom-grid">
-                                                <p class="author author-info"><a href="#" class="author">John Maniya</a>
-                                                </p>
-                                            </div>
-                                            <div class="slid-bottom-grid slid-bottom-right">
-                                                <p class="views views-info">2,114,200 views</p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 resent-grid recommended-grid slider-first">
-                                    <div class="resent-grid-img recommended-grid-img">
-                                        <a href="/cinema/single.jsp"><img src="/cinema/images/c3.jpg" alt=""/></a>
-                                        <div class="time small-time slider-time">
-                                            <p>2:34</p>
-                                        </div>
-                                        <div class="clck small-clck">
-                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">varius sit sed viverra viverra nullam
-                                            Nullam interdum metus</a></h5>
-                                        <div class="slid-bottom-grids">
-                                            <div class="slid-bottom-grid">
-                                                <p class="author author-info"><a href="#" class="author">John Maniya</a>
-                                                </p>
-                                            </div>
-                                            <div class="slid-bottom-grid slid-bottom-right">
-                                                <p class="views views-info">2,114,200 views</p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 resent-grid recommended-grid slider-first">
-                                    <div class="resent-grid-img recommended-grid-img">
-                                        <a href="/cinema/single.jsp"><img src="/cinema/images/c.jpg" alt=""/></a>
-                                        <div class="time small-time slider-time">
-                                            <p>5:12</p>
-                                        </div>
-                                        <div class="clck small-clck">
-                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-                                    <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam
-                                            varius sit sed viverra</a></h5>
-                                        <div class="slid-bottom-grids">
-                                            <div class="slid-bottom-grid">
-                                                <p class="author author-info"><a href="#" class="author">John Maniya</a>
-                                                </p>
-                                            </div>
-                                            <div class="slid-bottom-grid slid-bottom-right">
-                                                <p class="views views-info">1,14,200 views</p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
+
                             </div>
                         </li>
                         <li>
@@ -580,7 +440,8 @@
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra viverra nullam
+                                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra viverra
+                                            nullam
                                             nullam interdum metus</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
@@ -605,7 +466,8 @@
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam
+                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra
+                                            nullam
                                             varius sit sed viverra</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
@@ -630,7 +492,8 @@
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">varius sit sed viverra viverra nullam
+                                        <h5><a href="/cinema/single.jsp" class="title">varius sit sed viverra viverra
+                                            nullam
                                             Nullam interdum metus</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
@@ -655,7 +518,8 @@
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam
+                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra
+                                            nullam
                                             varius sit sed viverra</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
@@ -685,7 +549,8 @@
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra viverra nullam
+                                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra viverra
+                                            nullam
                                             nullam interdum metus</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
@@ -710,7 +575,8 @@
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam
+                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra
+                                            nullam
                                             varius sit sed viverra</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
@@ -735,7 +601,8 @@
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">varius sit sed viverra viverra nullam
+                                        <h5><a href="/cinema/single.jsp" class="title">varius sit sed viverra viverra
+                                            nullam
                                             Nullam interdum metus</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
@@ -760,7 +627,8 @@
                                         </div>
                                     </div>
                                     <div class="resent-grid-info recommended-grid-info">
-                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam
+                                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra
+                                            nullam
                                             varius sit sed viverra</a></h5>
                                         <div class="slid-bottom-grids">
                                             <div class="slid-bottom-grid">
@@ -797,7 +665,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra viverra nullam nullam interdum
+                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra viverra nullam nullam
+                            interdum
                             metus</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -816,7 +685,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit sed
+                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit
+                            sed
                             viverra</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -835,7 +705,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam interdum
+                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam
+                            interdum
                             metus</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -854,7 +725,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum viverra nullam metus varius sit sed
+                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum viverra nullam metus varius sit
+                            sed
                             viverra</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -876,7 +748,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam interdum
+                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam
+                            interdum
                             metus</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -895,7 +768,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit sed
+                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit
+                            sed
                             viverra</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -914,7 +788,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam interdum
+                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam
+                            interdum
                             metus</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -933,7 +808,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit sed
+                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit
+                            sed
                             viverra</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -960,7 +836,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam interdum
+                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam
+                            interdum
                             metus</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -979,7 +856,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum viverra nullam metus varius sit sed
+                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum viverra nullam metus varius sit
+                            sed
                             viverra</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -998,7 +876,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam interdum
+                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam
+                            interdum
                             metus</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -1017,7 +896,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit sed
+                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit
+                            sed
                             viverra</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -1039,7 +919,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam interdum
+                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam
+                            interdum
                             metus</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -1058,7 +939,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum viverra nullam metus varius sit sed
+                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum viverra nullam metus varius sit
+                            sed
                             viverra</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -1077,7 +959,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam interdum
+                        <h5><a href="/cinema/single.jsp" class="title">Varius sit sed viverra nullam viverra nullam
+                            interdum
                             metus</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
@@ -1096,7 +979,8 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info video-info-grid">
-                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit sed
+                        <h5><a href="/cinema/single.jsp" class="title">Nullam interdum metus viverra nullam varius sit
+                            sed
                             viverra</a></h5>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>

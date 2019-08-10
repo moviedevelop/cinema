@@ -32,4 +32,9 @@ public class MovieServiceImpl implements MovieService {
     public MoviesWithBLOBs selectByPrimaryKey(Integer movieId) {
         return mapper.selectByPrimaryKey(movieId);
     }
+
+    @Override
+    public List<MoviesWithBLOBs> selectMovieOrderByMark() {
+        return mapper.selectMovieOrderByMark();
+    }
 }

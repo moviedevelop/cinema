@@ -23,4 +23,6 @@ public interface MoviesMapper {
     int updateByPrimaryKey(Movies record);
 
     List<MoviesWithBLOBs> selectRecentMovie();
+
+    List<MoviesWithBLOBs> selectMovieOrderByMark();
 }
