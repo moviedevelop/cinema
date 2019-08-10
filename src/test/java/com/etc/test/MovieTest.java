@@ -40,4 +40,20 @@ public class MovieTest {
             System.out.println(movie.toString());
         }
     }
+
+    @Test
+    public void selectComics(){
+        List<MoviesWithBLOBs> movies = mapper.selectComics();
+        for (MoviesWithBLOBs movie : movies){
+            System.out.println(movie.toString());
+        }
+    }
+
+    @Test
+    public void selectTelePlay(){
+        List<MoviesWithBLOBs> movies = mapper.selectTelePlays();
+        for (MoviesWithBLOBs movie : movies){
+            System.out.println(movie.toString());
+        }
+    }
 }

@@ -37,4 +37,14 @@ public class MovieServiceImpl implements MovieService {
     public List<MoviesWithBLOBs> selectMovieOrderByMark() {
         return mapper.selectMovieOrderByMark();
     }
+
+    @Override
+    public List<MoviesWithBLOBs> selectComics() {
+        return mapper.selectComics();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectTelePlays() {
+        return mapper.selectTelePlays();
+    }
 }

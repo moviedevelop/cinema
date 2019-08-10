@@ -25,6 +25,8 @@ public class Movies {
 
     private String keyWord;
 
+    private Integer movieSize;
+
 
     public Integer getMovieId() {
         return movieId;
@@ -122,6 +124,14 @@ public class Movies {
         this.keyWord = keyWord;
     }
 
+    public Integer getMovieSize() {
+        return movieSize;
+    }
+
+    public void setMovieSize(Integer movieSize) {
+        this.movieSize = movieSize;
+    }
+
     @Override
     public String toString() {
         return "Movies{" +
@@ -137,6 +147,7 @@ public class Movies {
                 ", movieType='" + movieType + '\'' +
                 ", movieMark=" + movieMark +
                 ", keyWord='" + keyWord + '\'' +
+                ", movieSize=" + movieSize +
                 '}';
     }
 }

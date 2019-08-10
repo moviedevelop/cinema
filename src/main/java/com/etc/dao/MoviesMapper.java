@@ -25,4 +25,8 @@ public interface MoviesMapper {
     List<MoviesWithBLOBs> selectRecentMovie();
 
     List<MoviesWithBLOBs> selectMovieOrderByMark();
+
+    List<MoviesWithBLOBs> selectComics();
+
+    List<MoviesWithBLOBs> selectTelePlays();
 }

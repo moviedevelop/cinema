@@ -14,4 +14,8 @@ public interface MovieService {
     MoviesWithBLOBs selectByPrimaryKey(Integer movieId);
 
     List<MoviesWithBLOBs> selectMovieOrderByMark();
+
+    List<MoviesWithBLOBs> selectComics();
+
+    List<MoviesWithBLOBs> selectTelePlays();
 }

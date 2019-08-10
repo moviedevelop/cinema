@@ -25,8 +25,12 @@ public class IndexController {
     public ModelAndView toIndex(ModelAndView modelAndView){
         List<MoviesWithBLOBs> recentMovies = movieService.selectRecentMovie();
         List<MoviesWithBLOBs> highMarkMovies = movieService.selectMovieOrderByMark();
+        List<MoviesWithBLOBs> telePlays = movieService.selectTelePlays();
+        List<MoviesWithBLOBs> comicMocies = movieService.selectComics();
         modelAndView.addObject("recentMovies",recentMovies);
         modelAndView.addObject("highMarkMovies",highMarkMovies);
+        modelAndView.addObject("telePlays",telePlays);
+        modelAndView.addObject("comicMocies",comicMocies);
         modelAndView.setViewName("index");
         return modelAndView;
     }

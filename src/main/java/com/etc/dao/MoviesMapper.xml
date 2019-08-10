@@ -14,6 +14,7 @@
     <result column="movie_type" jdbcType="VARCHAR" property="movieType" />
     <result column="movie_mark" jdbcType="REAL" property="movieMark" />
     <result column="keyword" jdbcType="VARCHAR" property="keyWord" />
+    <result column="movie_size" jdbcType="INTEGER" property="movieSize"/>
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.etc.pojo.MoviesWithBLOBs">
     <result column="movie_img" jdbcType="LONGVARCHAR" property="movieImg" />
@@ -21,23 +22,31 @@
   </resultMap>
 
   <sql id="Base_Column_List">
-    movie_id, movie_name, movie_time, movie_date, movie_area, movie_lang, movie_director, 
-    movie_writer, movie_actor, movie_type, movie_mark, keyword
+    movie_id, movie_name, movie_time, movie_date, movie_area, movie_lang, movie_director,
+    movie_writer, movie_actor, movie_type, movie_mark, keyword, movie_size
   </sql>
   <sql id="Blob_Column_List">
     movie_img, description
   </sql>
 
   <select id="selectRecentMovie" resultMap="ResultMapWithBLOBs">
-    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img FROM movies ORDER BY movie_date DESC LIMIT 0,6
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img FROM movies WHERE movie_classify = -1 ORDER BY movie_date DESC LIMIT 0,6
   </select>
 
   <select id="selectMovieOrderByMark" resultMap="ResultMapWithBLOBs">
-    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies ORDER BY movie_mark DESC LIMIT 0,8
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 0 ORDER BY movie_mark DESC LIMIT 0,12
+  </select>
+
+  <select id="selectTelePlays" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+  <select id="selectComics" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_mark DESC LIMIT 0,6
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -50,15 +59,15 @@
   </delete>
 
   <insert id="insert" parameterType="com.etc.pojo.MoviesWithBLOBs">
-    insert into movies (movie_id, movie_name, movie_time, 
-      movie_date, movie_area, movie_lang, 
-      movie_director, movie_writer, movie_actor, 
-      movie_type, movie_mark, keyword,
+    insert into movies (movie_id, movie_name, movie_time,
+      movie_date, movie_area, movie_lang,
+      movie_director, movie_writer, movie_actor,
+      movie_type, movie_mark, keyword,movie_size,
       movie_img, description)
-    values (#{movieId,jdbcType=INTEGER}, #{movieName,jdbcType=VARCHAR}, #{movieTime,jdbcType=VARCHAR}, 
-      #{movieDate,jdbcType=VARCHAR}, #{movieArea,jdbcType=VARCHAR}, #{movieLang,jdbcType=VARCHAR}, 
-      #{movieDirector,jdbcType=VARCHAR}, #{movieWriter,jdbcType=VARCHAR}, #{movieActor,jdbcType=VARCHAR}, 
-      #{movieType,jdbcType=VARCHAR}, #{movieMark,jdbcType=REAL}, #{keyWord,jdbcType=VARCHAR},
+    values (#{movieId,jdbcType=INTEGER}, #{movieName,jdbcType=VARCHAR}, #{movieTime,jdbcType=VARCHAR},
+      #{movieDate,jdbcType=VARCHAR}, #{movieArea,jdbcType=VARCHAR}, #{movieLang,jdbcType=VARCHAR},
+      #{movieDirector,jdbcType=VARCHAR}, #{movieWriter,jdbcType=VARCHAR}, #{movieActor,jdbcType=VARCHAR},
+      #{movieType,jdbcType=VARCHAR}, #{movieMark,jdbcType=REAL}, #{keyWord,jdbcType=VARCHAR},#{movieSize,jdbcType=INTEGER}
       #{movieImg,jdbcType=LONGVARCHAR}, #{description,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.etc.pojo.Movies">
@@ -99,6 +108,9 @@
       </if>
       <if test="keyWord != null">
         keyword,
+      </if>
+      <if test="movieSize != null">
+        movie_size,
       </if>
       <if test="movieImg != null">
         movie_img,
@@ -143,6 +155,9 @@
       </if>
       <if test="keyWord != null">
         #{keyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="movieSize != null">
+        #{movieSize,jdbcType=INTEGER},
       </if>
       <if test="movieImg != null">
         #{movieImg,jdbcType=LONGVARCHAR},
@@ -189,6 +204,9 @@
       <if test="keyWord != null">
         keyword = #{keyWord,jdbcType=VARCHAR},
       </if>
+      <if test="movieSize != null">
+        movie_size = #{movieSize,jdbcType=INTEGER},
+      </if>
       <if test="movieImg != null">
         movie_img = #{movieImg,jdbcType=LONGVARCHAR},
       </if>
@@ -211,6 +229,7 @@
       movie_type = #{movieType,jdbcType=VARCHAR},
       movie_mark = #{movieMark,jdbcType=REAL},
       keyword = #{keyWord,jdbcType=VARCHAR},
+      movie_size = #{movieSize,jdbcType=INTEGER},
       movie_img = #{movieImg,jdbcType=LONGVARCHAR},
       description = #{description,jdbcType=LONGVARCHAR}
     where movie_id = #{movieId,jdbcType=INTEGER}
@@ -227,7 +246,8 @@
       movie_actor = #{movieActor,jdbcType=VARCHAR},
       movie_type = #{movieType,jdbcType=VARCHAR},
       movie_mark = #{movieMark,jdbcType=REAL},
-      keyword = #{keyWord,jdbcType=VARCHAR}
+      keyword = #{keyWord,jdbcType=VARCHAR},
+      movie_size = #{movieSize,jdbcType=INTEGER},
     where movie_id = #{movieId,jdbcType=INTEGER}
   </update>
 </mapper>
