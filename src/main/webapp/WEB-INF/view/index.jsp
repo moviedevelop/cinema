@@ -240,7 +240,7 @@
             <c:forEach items="${recentMovies}" var="i">
                 <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                     <div class="resent-grid-img recommended-grid-img">
-                        <a href="/cinema/single.jsp"><img src="images?movieImg=${i.movieImg}" alt=""/></a>
+                        <a href="/cinema/single.jsp"><img src="images/${i.movieImg}" alt=""/></a>
                         <div class="time">
                             <p>${i.movieTime}</p>
                         </div>
@@ -293,7 +293,7 @@
                                     <c:if test="${s.count <= 6}">
                                         <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                                             <div class="resent-grid-img recommended-grid-img">
-                                                <a href="/cinema/single.jsp"><img src="images?movieImg=${i.movieImg}" alt=""/></a>
+                                                <a href="/cinema/single.jsp"><img src="images/${i.movieImg}" alt=""/></a>
                                                 <div class="time small-time slider-time">
                                                     <p>${i.movieTime}</p>
                                                 </div>
@@ -325,7 +325,7 @@
                                     <c:if test="${s.count > 6}">
                                         <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                                             <div class="resent-grid-img recommended-grid-img">
-                                                <a href="/cinema/single.jsp"><img src="images?movieImg=${i.movieImg}"
+                                                <a href="/cinema/single.jsp"><img src="images/${i.movieImg}"
                                                                                   alt=""/></a>
                                                 <div class="time small-time slider-time">
                                                     <p>${i.movieTime}</p>
@@ -369,7 +369,7 @@
 
                     <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                         <div class="resent-grid-img recommended-grid-img">
-                            <a href="/cinema/single.jsp"><img src="images?movieImg=${i.movieImg}" alt=""/></a>
+                            <a href="/cinema/single.jsp"><img src="images/${i.movieImg}" alt=""/></a>
                             <div class="time small-time slider-time">
                                 <p>${i.movieTime}</p>
                             </div>
@@ -406,7 +406,7 @@
 
                     <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                         <div class="resent-grid-img recommended-grid-img">
-                            <a href="/cinema/single.jsp"><img src="images?movieImg=${i.movieImg}" alt=""/></a>
+                            <a href="/cinema/single.jsp"><img src="images/${i.movieImg}" alt=""/></a>
                             <div class="time small-time slider-time">
                                 <p>${i.movieTime}</p>
                             </div>
