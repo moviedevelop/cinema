@@ -38,12 +38,36 @@
     SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 0 ORDER BY movie_mark DESC LIMIT 0,12
   </select>
 
+  <select id="selectRecentTelePlays" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_date DESC LIMIT 0,6
+  </select>
+
+  <select id="selectTelePlaysOrderByMark" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
   <select id="selectTelePlays" resultMap="ResultMapWithBLOBs">
     SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_mark DESC LIMIT 0,6
   </select>
 
+    <select id="selectTelePlaysByChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 and movie_area ='中国大陆' ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+    <select id="selectTelePlaysByUnChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 and movie_area !='中国大陆' ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+    <select id="selectVarietyShows" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 3 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
   <select id="selectComics" resultMap="ResultMapWithBLOBs">
     SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+  <select id="selectRecentComics" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_date DESC LIMIT 0,4
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">

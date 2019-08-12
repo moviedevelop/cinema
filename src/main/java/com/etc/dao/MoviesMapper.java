@@ -29,4 +29,16 @@ public interface MoviesMapper {
     List<MoviesWithBLOBs> selectComics();
 
     List<MoviesWithBLOBs> selectTelePlays();
+
+    List<MoviesWithBLOBs> selectTelePlaysOrderByMark();
+
+    List<MoviesWithBLOBs> selectRecentTelePlays();
+
+    List<MoviesWithBLOBs> selectTelePlaysByChina();
+
+    List<MoviesWithBLOBs> selectTelePlaysByUnChina();
+
+    List<MoviesWithBLOBs> selectVarietyShows();
+
+    List<MoviesWithBLOBs> selectRecentComics();
 }

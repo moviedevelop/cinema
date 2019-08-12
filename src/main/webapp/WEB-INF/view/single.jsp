@@ -228,13 +228,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="drop-navigation drop-navigation">
 				  <ul class="nav nav-sidebar">
 					<li><a href="index.jsp" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-					<li><a href="../../shows.jsp" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>TV Shows</a></li>
+					<li><a href="shows.jsp" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>TV Shows</a></li>
 					<li><a href="../../history.jsp" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>History</a></li>
 					<li><a href="#" class="menu1"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Movies<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
 						<ul class="cl-effect-2">
-							<li><a href="../../movies.jsp">English</a></li>
-							<li><a href="../../movies.jsp">Chinese</a></li>
-							<li><a href="../../movies.jsp">Hindi</a></li>
+							<li><a href="movies.jsp">English</a></li>
+							<li><a href="movies.jsp">Chinese</a></li>
+							<li><a href="movies.jsp">Hindi</a></li>
 						</ul>
 						<!-- script-for-menu -->
 						<script>
@@ -259,7 +259,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							});
 							});
 						</script>
-					<li><a href="../../movies.jsp" class="song-icon"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>Songs</a></li>
+					<li><a href="movies.jsp" class="song-icon"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>Songs</a></li>
 					<li><a href="../../news.jsp" class="news-icon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>News</a></li>
 				  </ul>
 				  <!-- script-for-menu -->
@@ -343,7 +343,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<p>Category</p>
 											</div>
 											<div class="load-grid">
-												<a href="../../movies.jsp">Entertainment</a>
+												<a href="movies.jsp">Entertainment</a>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
