@@ -30,8 +30,7 @@
                     <a href="/cinema/upload.jsp">Upload</a>
                 </div>
                 <div class="signin">
-                    <a href="#small-dialog3" style="<c:if test="${sessionScope.userId != null}">display: none;</c:if>"
-                       class="play-icon popup-with-zoom-anim">注 册</a>
+                    <a href="#small-dialog3" style="<c:if test="${sessionScope.userId != null}">display: none;</c:if>" class="play-icon popup-with-zoom-anim">注 册</a>
                     <!-- pop-up-box -->
                     <script type="text/javascript" src="/cinema/js/modernizr.custom.min.js"></script>
                     <link href="/cinema/css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
@@ -52,7 +51,7 @@
                             </div>
                         </div>
                         <div class="signup">
-                            <form action="user/doreg" method="post" id="reg-form">
+                            <form action="/cinema/user/doreg" method="post" id="reg-form">
                                 <input type="text" placeholder="用户名" name="userName" required="required"/>
                                 <input type="password" placeholder="密码" name="userPass" required="required"
                                        pattern=".{6,}" title="Minimum 6 characters required"/>
@@ -197,9 +196,8 @@
                     </script>
                 </div>
                 <div class="signin">
-                    <span style="cursor: pointer;<c:if test="${sessionScope.userId != null}">display: none;</c:if>" onclick="window.location.href='user/login'">登 录</span>
-                    <span style="<c:if
-                            test="${sessionScope.userId == null}">display: none;</c:if>">${sessionScope.userName}</span>
+                    <span style="cursor: pointer;<c:if test="${sessionScope.userId != null}">display: none;</c:if>" onclick="window.location.href='/cinema/user/login'">登 录</span>
+                    <span style="<c:if test="${sessionScope.userId == null}">display: none;</c:if>">${sessionScope.userName}</span>
                 </div>
                 <div class="clearfix"></div>
             </div>

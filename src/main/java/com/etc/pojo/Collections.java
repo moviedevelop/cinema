@@ -30,4 +30,13 @@ public class Collections {
     public void setMovieId(Integer movieId) {
         this.movieId = movieId;
     }
+
+    @Override
+    public String toString() {
+        return "Collections{" +
+                "collectionId=" + collectionId +
+                ", userId=" + userId +
+                ", movieId=" + movieId +
+                '}';
+    }
 }

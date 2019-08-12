@@ -56,4 +56,10 @@ public class MovieTest {
             System.out.println(movie.toString());
         }
     }
+
+    @Test
+    public void selectByPrimaryKey(){
+        MoviesWithBLOBs movie = mapper.selectByPrimaryKey(1);
+        System.out.println(movie.toString());
+    }
 }

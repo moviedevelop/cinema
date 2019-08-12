@@ -36,7 +36,7 @@
             <c:forEach items="${recentMovies}" var="i">
                 <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                     <div class="resent-grid-img recommended-grid-img">
-                        <a href="/cinema/single.jsp"><img src="images/${i.movieImg}" alt=""/></a>
+                        <a href="/cinema/movie/detail/${i.movieId}"><img src="images/${i.movieImg}" alt=""/></a>
                         <div class="time">
                             <p>${i.movieTime}</p>
                         </div>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="resent-grid-info recommended-grid-info">
-                        <h3><a href="/cinema/single.jsp" class="title title-info">${i.movieName}</a></h3>
+                        <h3><a href="/cinema/movie/detail/${i.movieId}" class="title title-info">${i.movieName}</a></h3>
                         <ul>
                             <li><p class="author author-info"><a href="#" class="author">${i.movieArea}</a></p></li>
                             <li class="right-list"><p class="views views-info">${i.movieLang}</p></li>
@@ -89,7 +89,7 @@
                                     <c:if test="${s.count <= 6}">
                                         <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                                             <div class="resent-grid-img recommended-grid-img">
-                                                <a href="/cinema/single.jsp"><img src="images/${i.movieImg}" alt=""/></a>
+                                                <a href="/cinema/movie/detail/${i.movieId}"><img src="images/${i.movieImg}" alt=""/></a>
                                                 <div class="time small-time slider-time">
                                                     <p>${i.movieTime}</p>
                                                 </div>
@@ -98,7 +98,7 @@
                                                 </div>
                                             </div>
                                             <div class="resent-grid-info recommended-grid-info">
-                                                <h5><a href="/cinema/single.jsp"
+                                                <h5><a href="/cinema/movie/detail/${i.movieId}"
                                                        class="title">${i.movieName}（<span style="padding: 0;margin: 0;color: red">${i.movieMark}</span>）</a></h5>
                                                 <div class="slid-bottom-grids">
                                                     <div class="slid-bottom-grid">
@@ -121,7 +121,7 @@
                                     <c:if test="${s.count > 6}">
                                         <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                                             <div class="resent-grid-img recommended-grid-img">
-                                                <a href="/cinema/single.jsp"><img src="images/${i.movieImg}"
+                                                <a href="/cinema/movie/detail/${i.movieId}"><img src="images/${i.movieImg}"
                                                                                   alt=""/></a>
                                                 <div class="time small-time slider-time">
                                                     <p>${i.movieTime}</p>
@@ -131,7 +131,7 @@
                                                 </div>
                                             </div>
                                             <div class="resent-grid-info recommended-grid-info">
-                                                <h5><a href="/cinema/single.jsp"
+                                                <h5><a href="/cinema/movie/detail/${i.movieId}"
                                                        class="title">${i.movieName}（<span style="padding: 0;margin: 0;color: red">${i.movieMark}</span>）</a></h5>
                                                 <div class="slid-bottom-grids">
                                                     <div class="slid-bottom-grid">
@@ -165,7 +165,7 @@
 
                     <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                         <div class="resent-grid-img recommended-grid-img">
-                            <a href="/cinema/single.jsp"><img src="images/${i.movieImg}" alt=""/></a>
+                            <a href="/cinema/movie/detail/${i.movieId}"><img src="images/${i.movieImg}" alt=""/></a>
                             <div class="time small-time slider-time">
                                 <p>${i.movieTime}</p>
                             </div>
@@ -174,7 +174,7 @@
                             </div>
                         </div>
                         <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="/cinema/single.jsp" class="title">${i.movieName}（<span style="padding: 0;margin: 0;color: red">${i.movieMark}</span>）</a></h5>
+                            <h5><a href="/cinema/movie/detail/${i.movieId}" class="title">${i.movieName}（<span style="padding: 0;margin: 0;color: red">${i.movieMark}</span>）</a></h5>
                             <div class="slid-bottom-grids">
                                 <div class="slid-bottom-grid">
                                     <p class="author author-info"><a href="#" class="author">${i.movieArea}</a></p>
@@ -202,7 +202,7 @@
 
                     <div class="col-md-2 resent-grid recommended-grid slider-top-grids">
                         <div class="resent-grid-img recommended-grid-img">
-                            <a href="/cinema/single.jsp"><img src="images/${i.movieImg}" alt=""/></a>
+                            <a href="/cinema/movie/detail/${i.movieId}"><img src="images/${i.movieImg}" alt=""/></a>
                             <div class="time small-time slider-time">
                                 <p>${i.movieTime}</p>
                             </div>
@@ -211,7 +211,7 @@
                             </div>
                         </div>
                         <div class="resent-grid-info recommended-grid-info">
-                            <h5><a href="/cinema/single.jsp" class="title">${i.movieName}（<span style="padding: 0;margin: 0;color: red">${i.movieMark}</span>）</a></h5>
+                            <h5><a href="/cinema/movie/detail/${i.movieId}" class="title">${i.movieName}（<span style="padding: 0;margin: 0;color: red">${i.movieMark}</span>）</a></h5>
                             <div class="slid-bottom-grids">
                                 <div class="slid-bottom-grid">
                                     <p class="author author-info"><a href="#" class="author">${i.movieArea}</a></p>
