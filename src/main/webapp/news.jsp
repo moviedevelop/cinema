@@ -310,7 +310,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n7.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n7.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>7:30</p>
 								</div>
@@ -319,14 +319,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n8.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n8.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>9:34</p>
 								</div>
@@ -335,14 +335,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n9.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n9.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>5:34</p>
 								</div>
@@ -351,14 +351,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n10.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n10.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>6:55</p>
 								</div>
@@ -367,14 +367,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n11.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n11.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>8:04</p>
 								</div>
@@ -383,14 +383,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n12.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n12.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>7:34</p>
 								</div>
@@ -399,7 +399,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
@@ -420,7 +420,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n1.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n1.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>7:30</p>
 								</div>
@@ -429,14 +429,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n2.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n2.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>9:34</p>
 								</div>
@@ -445,14 +445,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n3.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n3.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>5:34</p>
 								</div>
@@ -461,14 +461,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n4.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n4.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>6:55</p>
 								</div>
@@ -477,14 +477,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n5.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n5.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>8:04</p>
 								</div>
@@ -493,14 +493,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/n6.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/n6.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>7:34</p>
 								</div>
@@ -509,7 +509,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
@@ -530,7 +530,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/sp4.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/sp4.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>7:30</p>
 								</div>
@@ -539,14 +539,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/g2.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/g2.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>9:34</p>
 								</div>
@@ -555,14 +555,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/sp1.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/sp1.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>5:34</p>
 								</div>
@@ -571,14 +571,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/sp6.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/sp6.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>6:55</p>
 								</div>
@@ -587,14 +587,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/g3.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/g3.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>8:04</p>
 								</div>
@@ -603,14 +603,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>
 						</div>
 						<div class="col-md-2 resent-grid recommended-grid sports-recommended-grid">
 							<div class="resent-grid-img recommended-grid-img">
-								<a href="single.jsp"><img src="images/sp2.jpg" alt="" /></a>
+								<a href="WEB-INF/view/single.jsp"><img src="images/sp2.jpg" alt="" /></a>
 								<div class="time small-time sports-tome">
 									<p>7:34</p>
 								</div>
@@ -619,7 +619,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="resent-grid-info recommended-grid-info">
-								<h5><a href="single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
+								<h5><a href="WEB-INF/view/single.jsp" class="title">Nullam interdum metus varius sit sed viverra</a></h5>
 								<p class="author"><a href="#" class="author">John Maniya</a></p>
 								<p class="views">2,114,200 views</p>
 							</div>

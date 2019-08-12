@@ -233,19 +233,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="container">
 					<div class="col-md-4 creators-top-grid">
 						<div class="creators-grid">
-							<a href="single.jsp">Getting started</a>
+							<a href="WEB-INF/view/single.jsp">Getting started</a>
 							<p>Nunc vitae rutrum enim. Mauris at volutpat leo. Vivamus dapibus mi ut elit fermentum tincidunt. Vestibulum lobortis mauris maximus magna consectetur, non commodo velit vestibulum. Phasellus rutrum odio eu metus dignissim, nec feugiat nisi tempus. Nunc non nibh sagittis, rhoncus neque tempus, efficitur dolor. Suspendisse ornare sapien vitae mauris pharetra, sed eleifend ante luctus. Fusce mollis tortor sit amet ipsum suscipit semper.</p>
 						</div>
 					</div>
 					<div class="col-md-4 creators-top-grid">
 						<div class="creators-grid">
-							<a href="single.jsp">Education</a>
+							<a href="WEB-INF/view/single.jsp">Education</a>
 							<p>Nunc vitae rutrum enim. Mauris at volutpat leo. Vivamus dapibus mi ut elit fermentum tincidunt. Vestibulum lobortis mauris maximus magna consectetur, non commodo velit vestibulum. Phasellus rutrum odio eu metus dignissim, nec feugiat nisi tempus. Nunc non nibh sagittis, rhoncus neque tempus, efficitur dolor. Suspendisse ornare sapien vitae mauris pharetra, sed eleifend ante luctus. Fusce mollis tortor sit amet ipsum suscipit semper.</p>
 						</div>
 					</div>
 					<div class="col-md-4 creators-top-grid">
 						<div class="creators-grid">
-							<a href="single.jsp">Community</a>
+							<a href="WEB-INF/view/single.jsp">Community</a>
 							<p>Nunc vitae rutrum enim. Mauris at volutpat leo. Vivamus dapibus mi ut elit fermentum tincidunt. Vestibulum lobortis mauris maximus magna consectetur, non commodo velit vestibulum. Phasellus rutrum odio eu metus dignissim, nec feugiat nisi tempus. Nunc non nibh sagittis, rhoncus neque tempus, efficitur dolor. Suspendisse ornare sapien vitae mauris pharetra, sed eleifend ante luctus. Fusce mollis tortor sit amet ipsum suscipit semper.</p>
 						</div>
 					</div>

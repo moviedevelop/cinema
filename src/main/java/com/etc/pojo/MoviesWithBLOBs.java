@@ -1,6 +1,8 @@
 package com.etc.pojo;
 
-public class MoviesWithBLOBs extends Movies {
+import java.io.Serializable;
+
+public class MoviesWithBLOBs extends Movies implements Serializable {
     private String movieImg;
 
     private String description;

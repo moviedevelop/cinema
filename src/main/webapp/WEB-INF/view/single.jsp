@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Privacy</title>
+<title>single</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="My Play Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap -->
-<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+<link href="../../css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
 <!-- //bootstrap -->
-<link href="css/dashboard.css" rel="stylesheet">
+<link href="../../css/dashboard.css" rel="stylesheet">
 <!-- Custom Theme files -->
-<link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
+<link href="../../css/style.css" rel='stylesheet' type='text/css' media="all" />
 <script src="js/jquery-1.11.1.min.js"></script>
 <!--start-smoth-scrolling-->
 
@@ -28,7 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="WEB-INF/view/index.jsp"><h1><img src="images/logo.png" alt="" /></h1></a>
+          <a class="navbar-brand" href="index.jsp"><h1><img src="images/logo.png" alt="" /></h1></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 			<div class="top-search">
@@ -39,14 +39,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>  
 			<div class="header-top-right">
 				<div class="file">
-					<a href="upload.jsp">Upload</a>
+					<a href="../../upload.jsp">Upload</a>
 				</div>	
 				<div class="signin">
 					<a href="#small-dialog2" class="play-icon popup-with-zoom-anim">Sign Up</a>
 					<!-- pop-up-box -->
-									<script type="text/javascript" src="js/modernizr.custom.min.js"></script>    
-									<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-									<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+									<script type="text/javascript" src="../../js/modernizr.custom.min.js"></script>
+									<link href="../../css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+									<script src="../../js/jquery.magnific-popup.js" type="text/javascript"></script>
 									<!--//pop-up-box -->
 									<div id="small-dialog2" class="mfp-hide">
 										<h3>Create Account</h3> 
@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</div>
 										<div class="signup">
-											<form action="upload.jsp">
+											<form action="../../upload.jsp">
 												<input type="text" class="email" placeholder="Email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?" title="Enter a valid email"/>
 												<input type="password" placeholder="Password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off" />
 												<input type="submit"  value="Sign In"/>
@@ -227,14 +227,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 				<div class="drop-navigation drop-navigation">
 				  <ul class="nav nav-sidebar">
-					<li><a href="WEB-INF/view/index.jsp" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-					<li><a href="shows.jsp" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>TV Shows</a></li>
-					<li><a href="history.jsp" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>History</a></li>
+					<li><a href="index.jsp" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+					<li><a href="../../shows.jsp" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>TV Shows</a></li>
+					<li><a href="../../history.jsp" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>History</a></li>
 					<li><a href="#" class="menu1"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>Movies<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
 						<ul class="cl-effect-2">
-							<li><a href="movies.jsp">English</a></li>
-							<li><a href="movies.jsp">Chinese</a></li>
-							<li><a href="movies.jsp">Hindi</a></li>
+							<li><a href="../../movies.jsp">English</a></li>
+							<li><a href="../../movies.jsp">Chinese</a></li>
+							<li><a href="../../movies.jsp">Hindi</a></li>
 						</ul>
 						<!-- script-for-menu -->
 						<script>
@@ -246,10 +246,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</script>
 					<li><a href="#" class="menu"><span class="glyphicon glyphicon-film glyphicon-king" aria-hidden="true"></span>Sports<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
 						<ul class="cl-effect-1">
-							<li><a href="sports.jsp">Football</a></li>
-							<li><a href="sports.jsp">Cricket</a></li>
-							<li><a href="sports.jsp">Tennis</a></li>
-							<li><a href="sports.jsp">Shattil</a></li>
+							<li><a href="../../sports.jsp">Football</a></li>
+							<li><a href="../../sports.jsp">Cricket</a></li>
+							<li><a href="../../sports.jsp">Tennis</a></li>
+							<li><a href="../../sports.jsp">Shattil</a></li>
 						</ul>
 						<!-- script-for-menu -->
 						<script>
@@ -259,8 +259,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							});
 							});
 						</script>
-					<li><a href="movies.jsp" class="song-icon"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>Songs</a></li>
-					<li><a href="news.jsp" class="news-icon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>News</a></li>
+					<li><a href="../../movies.jsp" class="song-icon"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>Songs</a></li>
+					<li><a href="../../news.jsp" class="news-icon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>News</a></li>
 				  </ul>
 				  <!-- script-for-menu -->
 						<script>
@@ -287,176 +287,317 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 			<div class="show-top-grids">
-				<div class="main-grids news-main-grids">
-					<div class="recommended-info">
-						<h3>Data Security and Privacy Policy	</h3>
-						<p class="history-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus efficitur, eros 
-							sed suscipit porttitor, diam felis tempus odio, eget sollicitudin purus sem sit amet dolor. Integer euismod 
-							non mauris commodo rutrum. Nulla risus felis, rhoncus vel est sed, consequat efficitur ante. Phasellus mi 
-							sapien, accumsan vitae lobortis vitae, laoreet dapibus metus. Pellentesque id ipsum vel nibh imperdiet 
-							imperdiet ac ac mauris. Suspendisse ac leo augue. Nullam venenatis massa ut pulvinar scelerisque. Duis vel 
-							vehicula urna. Quisque semper vitae lectus a feugiat. Sed dignissim egestas nunc, nec suscipit mauris 
-							interdum lobortis.
-						</p>
-						<div class="terms-info">
-							<div class="terms-info-grid">
-								<h3>1. Personal information</h3>
-								<p>Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-									volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-									feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-								</p>
-								<ol>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
+				<div class="col-sm-8 single-left">
+					<div class="song">
+						<div class="song-info">
+							<h3>Etiam molestie nisl eget consequat pharetra</h3>	
+					</div>
+						<div class="video-grid">
+							<iframe src="https://www.youtube.com/embed/oYiT-vLjhC4" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="song-grid-right">
+						<div class="share">
+							<h5>Share this</h5>
+							<ul>
+								<li><a href="#" class="icon fb-icon">Facebook</a></li>
+								<li><a href="#" class="icon dribbble-icon">Dribbble</a></li>
+								<li><a href="#" class="icon twitter-icon">Twitter</a></li>
+								<li><a href="#" class="icon pinterest-icon">Pinterest</a></li>
+								<li><a href="#" class="icon whatsapp-icon">Whatsapp</a></li>
+								<li><a href="#" class="icon like">Like</a></li>
+								<li><a href="#" class="icon comment-icon">Comments</a></li>
+								<li class="view">200 Views</li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+					<div class="published">
+						<script src="jquery.min.js"></script>
+							<script>
+								$(document).ready(function () {
+									size_li = $("#myList li").size();
+									x=1;
+									$('#myList li:lt('+x+')').show();
+									$('#loadMore').click(function () {
+										x= (x+1 <= size_li) ? x+1 : size_li;
+										$('#myList li:lt('+x+')').show();
+									});
+									$('#showLess').click(function () {
+										x=(x-1<0) ? 1 : x-1;
+										$('#myList li').not(':lt('+x+')').hide();
+									});
+								});
+							</script>
+							<div class="load_more">	
+								<ul id="myList">
+									<li>
+										<h4>Published on 15 June 2015</h4>
+										<p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
 									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
+									<li>
+										<p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
+										<p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo. Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
+										<div class="load-grids">
+											<div class="load-grid">
+												<p>Category</p>
+											</div>
+											<div class="load-grid">
+												<a href="../../movies.jsp">Entertainment</a>
+											</div>
+											<div class="clearfix"> </div>
+										</div>
 									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-								</ol>
+								</ul>
 							</div>
-							<div class="terms-info-grid">
-								<h3>2. Other information</h3>
-								<p>Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-									volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-									feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.Mauris 
-									cursus rhoncus feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum 
-									sit amet. Curabitur vel neque vel sapien pulvinar placerat. Cras eget leo id risus vestibulum 
-									dapibus. Class aptent taciti sociosqu 
-								</p>
-								<ol>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-								</ol>
+					</div>
+					<div class="all-comments">
+						<div class="all-comments-info">
+							<a href="#">All Comments (8,657)</a>
+							<div class="box">
+								<form>
+									<input type="text" placeholder="Name" required=" ">			           					   
+									<input type="text" placeholder="Email" required=" ">
+									<input type="text" placeholder="Phone" required=" ">
+									<textarea placeholder="Message" required=" "></textarea>
+									<input type="submit" value="SEND">
+									<div class="clearfix"> </div>
+								</form>
 							</div>
-							<div class="terms-info-grid">
-								<h3>3. Use of information</h3>
-								<p>Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-									volutpat rhoncus, lectus sem tincidunt mauris, Mauris cursus rhoncus feugiat. Proin quis 
-									nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet. Curabitur vel neque vel 
-									sapien pulvinar placerat. Cras eget leo id risus vestibulum dapibus. Class aptent taciti sociosqu eu 
-									pretium neque urna nec lorem. Mauris cursus rhoncus Nulla eleifend velit neque, id cursus erat interdum sit amet.
-								</p>
-								<ol>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-								</ol>
+							<div class="all-comments-buttons">
+								<ul>
+									<li><a href="#" class="top">Top Comments</a></li>
+									<li><a href="#" class="top newest">Newest First</a></li>
+									<li><a href="#" class="top my-comment">My Comments</a></li>
+								</ul>
 							</div>
-							<div class="terms-info-grid">
-								<h3>4. Cookies</h3>
-								<p>Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-									volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-									feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.lectus 
-									sem tincidunt mauris, Mauris cursus rhoncus feugiat.
-								</p>
-								<ol>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-								</ol>
+						</div>
+						<div class="media-grids">
+							<div class="media">
+								<h5>Tom Brown</h5>
+								<div class="media-left">
+									<a href="#">
+										
+									</a>
+								</div>
+								<div class="media-body">
+									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
+									<span>View all posts by :<a href="#"> Admin </a></span>
+								</div>
 							</div>
-							<div class="terms-info-grid">
-								<h3>5. Vivamus pharetra ante convallis</h3>
-								<p>Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-									volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-									feugiat. Proin quis nisl augue. Nulla eleifend velit neque, Vivamus pharetra, ante convallis aliquam sodales, 
-									arcu dolor consectetur eros, a consequat nisl risus sit amet nuncVivamus pharetra, ante convallis aliquam sodales, 
-									arcu dolor consectetur eros, a consequat nisl risus sit amet nuncVivamus pharetra, ante convallis aliquam sodales, 
-									arcu dolor consectetur eros, a consequat nisl risus sit amet nuncid cursus erat interdum sit amet.
-								</p>
+							<div class="media">
+								<h5>Mark Johnson</h5>
+								<div class="media-left">
+									<a href="#">
+										
+									</a>
+								</div>
+								<div class="media-body">
+									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
+									<span>View all posts by :<a href="#"> Admin </a></span>
+								</div>
 							</div>
-							<div class="terms-info-grid">
-								<h3>6. Security</h3>
-								<ol>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-									<li><p class="terms-info-text">Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-											volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-											feugiat. Proin quis nisl augue. Nulla eleifend velit neque, id cursus erat interdum sit amet.
-										</p>
-									</li>
-								</ol>
+							<div class="media">
+								<h5>Steven Smith</h5>
+								<div class="media-left">
+									<a href="#">
+										
+									</a>
+								</div>
+								<div class="media-body">
+									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
+									<span>View all posts by :<a href="#"> Admin </a></span>
+								</div>
 							</div>
-							<div class="terms-info-grid">
-								<h3>7. Access and alteration</h3>
-								<p>Pellentesque consequat ligula dui, in aliquam libero pellentesque sit amet. Ut viverra, urna vitae 
-									volutpat rhoncus, lectus sem tincidunt mauris, eu pretium neque urna nec lorem. Mauris cursus rhoncus 
-									feugiat. Proin quis nisl augue. Vivamus pharetra, ante convallis aliquam sodales, arcu dolor consectetur 
-									eros, a consequat nisl risus sit amet nuncNulla eleifend velit neque, id cursus erat interdum sit amet.
-								</p>
+							<div class="media">
+								<h5>Marry Johne</h5>
+								<div class="media-left">
+									<a href="#">
+										
+									</a>
+								</div>
+								<div class="media-body">
+									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
+									<span>View all posts by :<a href="#"> Admin </a></span>
+								</div>
+							</div>
+							<div class="media">
+								<h5>Mark Johnson</h5>
+								<div class="media-left">
+									<a href="#">
+										
+									</a>
+								</div>
+								<div class="media-body">
+									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
+									<span>View all posts by :<a href="#"> Admin </a></span>
+								</div>
+							</div>
+							<div class="media">
+								<h5>Mark Johnson</h5>
+								<div class="media-left">
+									<a href="#">
+										
+									</a>
+								</div>
+								<div class="media-body">
+									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
+									<span>View all posts by :<a href="#"> Admin </a></span>
+								</div>
+							</div>
+							<div class="media">
+								<h5>Peter Johnson</h5>
+								<div class="media-left">
+									<a href="#">
+										
+									</a>
+								</div>
+								<div class="media-body">
+									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
+									<span>View all posts by :<a href="#"> Admin </a></span>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<div class="col-md-4 single-right">
+					<h3>Up Next</h3>
+					<div class="single-grid-right">
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r1.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r2.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views </p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r3.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r4.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r5.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r6.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author">By <a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r1.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r2.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r3.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r4.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r5.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="single.jsp"><img src="images/r6.jpg" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.jsp" class="title"> Nullam interdum metus</a>
+								<p class="author"><a href="#" class="author">John Maniya</a></p>
+								<p class="views">2,114,200 views</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
 			</div>
 			<!-- footer -->
 			<div class="footer">
@@ -464,12 +605,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="footer-top">
 						<div class="footer-top-nav">
 							<ul>
-								<li><a href="about.jsp">About</a></li>
-								<li><a href="press.jsp">Press</a></li>
-								<li><a href="copyright.jsp">Copyright</a></li>
-								<li><a href="creators.jsp">Creators</a></li>
+								<li><a href="../../about.jsp">About</a></li>
+								<li><a href="../../press.jsp">Press</a></li>
+								<li><a href="../../copyright.jsp">Copyright</a></li>
+								<li><a href="../../creators.jsp">Creators</a></li>
 								<li><a href="#">Advertise</a></li>
-								<li><a href="developers.jsp">Developers</a></li>
+								<li><a href="../../developers.jsp">Developers</a></li>
 							</ul>
 						</div>
 						<div class="footer-bottom-nav">
@@ -478,7 +619,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><a href="privacy.jsp">Privacy</a></li>
 								<li><a href="#small-dialog4" class="play-icon popup-with-zoom-anim">Send feedback</a></li>
 								<li><a href="privacy.jsp">Policy & Safety </a></li>
-								<li><a href="try.jsp">Try something new!</a></li>
+								<li><a href="../../try.jsp">Try something new!</a></li>
 							</ul>
 						</div>
 					</div>
@@ -799,7 +940,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<option value="">Safety On</option>
 								</select>
 							</li>
-							<li><a href="history.jsp" class="f-history">History</a></li>
+							<li><a href="../../history.jsp" class="f-history">History</a></li>
 							<li><a href="#small-dialog5" class="play-icon popup-with-zoom-anim f-history f-help">Help</a></li>
 						</ul>
 					</div>
@@ -818,7 +959,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
   </body>
 </html>

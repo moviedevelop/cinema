@@ -16,6 +16,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery-1.11.1.min.js"></script>
 <!--start-smoth-scrolling-->
 
+	<%--电视剧列表页--%>
+
 </head>
   <body>
 
@@ -310,7 +312,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/eg1.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/eg1.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>7:34</p>
 									</div>
@@ -319,14 +321,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">1,200 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/eg2.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/eg2.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>9:34</p>
 									</div>
@@ -335,14 +337,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">4,200 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/eg3.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/eg3.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>3:04</p>
 									</div>
@@ -351,14 +353,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">2,200 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/eg4.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/eg4.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>2:06</p>
 									</div>
@@ -367,14 +369,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">2,114 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/eg1.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/eg1.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>3:23</p>
 									</div>
@@ -383,14 +385,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">2,200 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/eg2.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/eg2.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>4:23</p>
 									</div>
@@ -399,7 +401,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">2,114 views</p>
 								</div>
@@ -420,7 +422,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/my1.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/my1.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>2:34</p>
 									</div>
@@ -429,14 +431,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">2,200 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/my2.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/my2.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>3:45</p>
 									</div>
@@ -445,14 +447,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">1,200 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/my3.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/my3.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>7:34</p>
 									</div>
@@ -461,14 +463,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">4,200 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/my4.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/my4.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>6:30</p>
 									</div>
@@ -477,14 +479,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">2,200 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/my5.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/my5.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>5:25</p>
 									</div>
@@ -493,14 +495,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">7,200 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/my6.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/my6.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>6:45</p>
 									</div>
@@ -509,7 +511,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">5,786 views</p>
 								</div>
@@ -530,7 +532,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/mt1.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/mt1.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>5:32</p>
 									</div>
@@ -539,14 +541,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">5,763 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/mt2.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/mt2.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>2:34</p>
 									</div>
@@ -555,14 +557,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">7,854 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/mt3.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/mt3.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>8:26</p>
 									</div>
@@ -571,14 +573,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">5,658 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/mt4.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/mt4.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>3:44</p>
 									</div>
@@ -587,14 +589,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views"> 7,897 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/mt5.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/mt5.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>4:46</p>
 									</div>
@@ -603,14 +605,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">5,576 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/mt6.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/mt6.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>5:14</p>
 									</div>
@@ -619,7 +621,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">2,476 views</p>
 								</div>
@@ -640,7 +642,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/ma1.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/ma1.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>5:09</p>
 									</div>
@@ -649,14 +651,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">1,897 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/ma2.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/ma2.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>6:23</p>
 									</div>
@@ -665,14 +667,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">9,565 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/ma3.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/ma3.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>3:34</p>
 									</div>
@@ -681,14 +683,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">9,576 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/ma4.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/ma4.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>5:23</p>
 									</div>
@@ -697,14 +699,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">4,675 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/ma5.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/ma5.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>5:04</p>
 									</div>
@@ -713,14 +715,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">9,443 views</p>
 								</div>
 							</div>
 							<div class="col-md-2 resent-grid recommended-grid show-video-grid">
 								<div class="resent-grid-img recommended-grid-img">
-									<a href="single.jsp"><img src="images/ma6.jpg" alt="" /></a>
+									<a href="WEB-INF/view/single.jsp"><img src="images/ma6.jpg" alt="" /></a>
 									<div class="time small-time show-time">
 										<p>3:34</p>
 									</div>
@@ -729,7 +731,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 								<div class="resent-grid-info recommended-grid-info">
-									<h5><a href="single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
+									<h5><a href="WEB-INF/view/single.jsp" class="title">Varius sit sed Nullam interdum</a></h5>
 									<p class="author"><a href="#" class="author">John Maniya</a></p>
 									<p class="views">4,545 views</p>
 								</div>
