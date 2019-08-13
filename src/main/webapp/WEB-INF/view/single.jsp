@@ -45,23 +45,6 @@
             color: red;
         }
 
-        .alertWindowContent h1, p {
-            text-align: center;
-            font-size: 18px;
-            font-weight: bolder;
-        }
-
-        .alertWindowContent input {
-            width: 100px;
-            height: 50px;
-            cursor: pointer;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
-        }
-
-
-
     </style>
 
 </head>
