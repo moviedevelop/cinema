@@ -11,7 +11,11 @@ public class Comments {
 
     private Integer userId;
 
+    private Integer movieId;
+
     private String commentContent;
+
+    private Users users;
 
     public Integer getCommentId() {
         return commentId;
@@ -51,5 +55,34 @@ public class Comments {
 
     public void setCommentContent(String commentContent) {
         this.commentContent = commentContent == null ? null : commentContent.trim();
+    }
+
+    public Integer getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(Integer movieId) {
+        this.movieId = movieId;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        return "Comments{" +
+                "commentId=" + commentId +
+                ", commentScore=" + commentScore +
+                ", commentTime=" + commentTime +
+                ", userId=" + userId +
+                ", movieId=" + movieId +
+                ", commentContent='" + commentContent + '\'' +
+                ", users=" + users +
+                '}';
     }
 }

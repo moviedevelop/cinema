@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -20,6 +21,7 @@
     <link href="/cinema/css/dashboard.css" rel="stylesheet">
     <!-- Custom Theme files -->
     <link href="/cinema/css/style.css" rel='stylesheet' type='text/css' media="all"/>
+    <link href="/cinema/css/alert.css" rel="stylesheet" type="text/css">
     <script src="/cinema/js/jquery-3.4.1.min.js"></script>
     <script src="/cinema/js/tipso.js"></script>
     <!--start-smoth-scrolling-->
@@ -45,13 +47,15 @@
             color: red;
         }
 
+
     </style>
 
 </head>
 <body>
 <%@include file="topnav.jsp" %>
 <%@include file="leftside.jsp" %>
-
+<div class="alert"
+     style="height:50px;line-height: 25px;font-size:14px;width:15%;margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;"></div>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <div class="show-top-grids">
         <div class="col-sm-8 single-left">
@@ -75,9 +79,17 @@
                     <span style="display: none" id="collection"></span>
                     <br>
                     <button class="btn btn-link" onclick="addCollection()">想看</button>
-                    <button class="btn btn-link">写影评</button>
+                    <button class="btn btn-link" onclick="addComment()">写影评</button>
                 </div>
                 <script>
+                    function addComment() {
+                        if ($("#box").css("display") == "none") {
+                            $("#box").css("display", "block");
+                        } else {
+                            $("#box").css("display", "none");
+                        }
+
+                    }
 
                     //使用json的ajax
                     function addCollection() {
@@ -92,9 +104,15 @@
                             contentType: "application/json",
                             data: data,
                             success: function (json) {
-                                $("#collection").text(json.message);
-                                $("#collection").css("display","inline-block");
-                                $("#collection").hide(3000);
+                                if (json.message == "收藏成功") {
+                                    $('.alert').html(json.message).addClass('alert-info').show().delay(2000).fadeOut();
+                                    /*$("#collection").text(json.message);
+                                    $("#collection").css("display","inline-block");
+                                    $("#collection").hide(3000);*/
+                                } else if (json.message == "亲，要先登录哦") {
+                                    $('.alert').html(json.message).addClass('alert-danger').show().delay(2000).fadeOut();
+                                }
+
                             }
                         })
                     }
@@ -135,7 +153,7 @@
                             <span>${movieDetail.movieMark}</span>
                         </div>
                         <div class="col-md-8">
-                            <p>200人评价</p>
+                            <p>${commentCount}人评价</p>
                         </div>
                     </div>
                     <div class="row">
@@ -144,71 +162,64 @@
                     </div>
                 </div>
             </div>
-
             <div class="clearfix"></div>
-            <div class="published">
-                <script src="/cinema/js/jquery-3.4.1.min.js"></script>
-                <script>
-                    $(document).ready(function () {
-                        size_li = $("#myList li").size();
-                        x = 1;
-                        $('#myList li:lt(' + x + ')').show();
-                        $('#loadMore').click(function () {
-                            x = (x + 1 <= size_li) ? x + 1 : size_li;
-                            $('#myList li:lt(' + x + ')').show();
-                        });
-                        $('#showLess').click(function () {
-                            x = (x - 1 < 0) ? 1 : x - 1;
-                            $('#myList li').not(':lt(' + x + ')').hide();
-                        });
-                    });
-                </script>
-                <div class="load_more">
-                    <ul id="myList">
-                        <li>
-                            <h4>Published on 15 June 2015</h4>
-                            <p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo.
-                                Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac
-                                dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum
-                                sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus
-                                a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
-                        </li>
-                        <li>
-                            <p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo.
-                                Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac
-                                dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum
-                                sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus
-                                a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
-                            <p>Nullam fringilla sagittis tortor ut rhoncus. Nam vel ultricies erat, vel sodales leo.
-                                Maecenas pellentesque, est suscipit laoreet tincidunt, ipsum tortor vestibulum leo, ac
-                                dignissim diam velit id tellus. Morbi luctus velit quis semper egestas. Nam condimentum
-                                sem eget ex iaculis bibendum. Nam tortor felis, commodo faucibus sollicitudin ac, luctus
-                                a turpis. Donec congue pretium nisl, sed fringilla tellus tempus in.</p>
-                            <div class="load-grids">
-                                <div class="load-grid">
-                                    <p>Category</p>
-                                </div>
-                                <div class="load-grid">
-                                    <a href="../../movies.jsp">Entertainment</a>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
             <div class="all-comments">
                 <div class="all-comments-info">
-                    <a href="#">All Comments (8,657)</a>
-                    <div class="box">
-                        <form>
-                            <input type="text" placeholder="Name" required=" ">
-                            <input type="text" placeholder="Email" required=" ">
-                            <input type="text" placeholder="Phone" required=" ">
-                            <textarea placeholder="Message" required=" "></textarea>
-                            <input type="submit" value="SEND">
+
+                    <div class="box" id="box" style="display: none">
+                        <a href="#">All Comments (${commentCount})</a>
+                        <form id="comment-form">
+                            <input type="hidden" value="${movieDetail.movieId}" name="movieId">
+                            <input type="text" placeholder="电影评分(1-10)" name="commentScore">
+                            <textarea placeholder="在这里写下你的评论哦" name="commentContent"></textarea>
+                            <input type="button" onclick="doComment()" value="写好了">
                             <div class="clearfix"></div>
                         </form>
+                        <script>
+                            function doComment() {
+                                var commentForm = $("#comment-form").serializeArray();
+                                var data = {};
+                                var flag = true;
+                                if (${userId == null}) {
+                                    $('.alert').html("亲，要先登录哦").addClass('alert-danger').show().delay(2000).fadeOut();
+                                    return;
+                                }
+                                $.each(commentForm, function () {
+                                    if (this.name == "commentScore") {
+                                        var reg = /^([0-9]|10)$/;
+                                        if (!reg.test(this.value)) {
+                                            alert("评分需为0-10的整数");
+                                            //$('.alert').html("评分需为0-10的整数").addClass('alert-danger').show().delay(2000).fadeOut();
+                                            flag = false;
+                                        }
+                                        data[this.name] = this.value;
+                                    }
+                                    if (this.name == "commentContent") {
+                                        if (this.value == null || this.value == '') {
+                                            //$('.alert').html("评论内容不能为空").addClass('alert-danger').show().delay(2000).fadeOut();
+                                            alert("评论内容不能为空");
+                                            flag = false;
+                                        }
+                                        data[this.name] = this.value;
+                                    }
+                                    data[this.name] = this.value;
+                                })
+                                var comment = JSON.stringify(data);
+                                if (flag) {
+                                    $.ajax({
+                                        url: "/cinema/comment/add",
+                                        type: "post",
+                                        contentType: "application/json",
+                                        data: comment,
+                                        success: function (json) {
+                                            $('.alert').html(json.message).addClass('alert-info').show().delay(2000).fadeOut();
+                                        }
+                                    })
+                                }
+
+                            }
+                        </script>
                     </div>
                     <div class="all-comments-buttons">
                         <ul>
@@ -219,97 +230,20 @@
                     </div>
                 </div>
                 <div class="media-grids">
-                    <div class="media">
-                        <h5>Tom Brown</h5>
-                        <div class="media-left">
-                            <a href="#">
-
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit
-                                maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                            <span>View all posts by :<a href="#"> Admin </a></span>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <h5>Mark Johnson</h5>
-                        <div class="media-left">
-                            <a href="#">
-
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit
-                                maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                            <span>View all posts by :<a href="#"> Admin </a></span>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <h5>Steven Smith</h5>
-                        <div class="media-left">
-                            <a href="#">
-
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit
-                                maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                            <span>View all posts by :<a href="#"> Admin </a></span>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <h5>Marry Johne</h5>
-                        <div class="media-left">
-                            <a href="#">
-
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit
-                                maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                            <span>View all posts by :<a href="#"> Admin </a></span>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <h5>Mark Johnson</h5>
-                        <div class="media-left">
-                            <a href="#">
-
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit
-                                maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                            <span>View all posts by :<a href="#"> Admin </a></span>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <h5>Mark Johnson</h5>
-                        <div class="media-left">
-                            <a href="#">
-
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit
-                                maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                            <span>View all posts by :<a href="#"> Admin </a></span>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <h5>Peter Johnson</h5>
-                        <div class="media-left">
-                            <a href="#">
-
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit
-                                maecenas imperdiet ipsum id ex pretium hendrerit</p>
-                            <span>View all posts by :<a href="#"> Admin </a></span>
-                        </div>
-                    </div>
+                    <c:forEach items="${commentsList}" var="i" varStatus="s">
+                        <c:if test="${s.count <= 6}">
+                            <div class="media">
+                                <h5>${i.users.userName}</h5>
+                                <div class="media-left">
+                                    <img src="${i.users.userImg}" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <p>${i.commentContent}</p>
+                                    <span>发布时间 : <fmt:formatDate value="${i.commentTime}" pattern="yyyy-MM-dd"/></span>
+                                </div>
+                            </div>
+                        </c:if>
+                    </c:forEach>
                 </div>
             </div>
         </div>
