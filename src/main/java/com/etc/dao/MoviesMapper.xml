@@ -16,6 +16,7 @@
     <result column="movie_mark" jdbcType="REAL" property="movieMark" />
     <result column="keyword" jdbcType="VARCHAR" property="keyWord" />
     <result column="movie_size" jdbcType="INTEGER" property="movieSize"/>
+      <result column="movie_classify" jdbcType="INTEGER" property="movieClassify"/>
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.etc.pojo.MoviesWithBLOBs">
     <result column="movie_img" jdbcType="LONGVARCHAR" property="movieImg" />
@@ -24,7 +25,7 @@
 
   <sql id="Base_Column_List">
     movie_id, movie_name, movie_time, movie_date, movie_area, movie_lang, movie_director,
-    movie_writer, movie_actor, movie_type, movie_mark, keyword, movie_size
+    movie_writer, movie_actor, movie_type, movie_mark, keyword, movie_size,movie_classify
   </sql>
   <sql id="Blob_Column_List">
     movie_img, description

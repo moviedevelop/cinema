@@ -1,6 +1,6 @@
 package com.etc.controller;
 
-import com.etc.Message;
+import com.etc.vo.Message;
 import com.etc.pojo.Users;
 import com.etc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
