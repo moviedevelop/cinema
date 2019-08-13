@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -40,7 +41,7 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public ModelAndView login(ModelAndView modelAndView){
+    public ModelAndView login(ModelAndView modelAndView, HttpServletRequest request,HttpSession session){
         modelAndView.setViewName("login");
         return modelAndView;
     }
@@ -54,9 +55,15 @@ public class UserController {
             model.setViewName("login");
             return model;
         } else {
+            String pageFrom = (String) session.getAttribute("pageFrom");
             session.setAttribute("userId", loginUser.getUserId());
             session.setAttribute("userName",loginUser.getUserName());
-            model.setViewName("redirect:../index");
+            if (pageFrom != null){
+                model.setViewName("redirect:" + pageFrom);
+            }else{
+                model.setViewName("redirect:../index");
+            }
+
             return model;
         }
     }
