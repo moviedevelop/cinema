@@ -128,7 +128,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="clearfix"> </div>
 							</div>
-							<c:forEach items="${recentComics}" var="i" varStatus="s">
+							<c:forEach items="${comicsOrderByMark}" var="i" varStatus="s">
+								<c:if test="${s.count <= 4}">
 								<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
 									<div class="resent-grid-img recommended-grid-img">
 										<a href="/cinema/single.jsp"><img src="/cinema/images/${i.movieImg}" alt="" /></a>
@@ -147,6 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</ul>
 									</div>
 								</div>
+								</c:if>
 							</c:forEach>
 
 							<div class="clearfix"> </div>
@@ -163,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="clearfix"> </div>
 							</div>
-							<c:forEach items="${recentComics}" var="i" varStatus="s">
+							<c:forEach items="${comicsByChina}" var="i" varStatus="s">
 								<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
 									<div class="resent-grid-img recommended-grid-img">
 										<a href="/cinema/single.jsp"><img src="/cinema/images/${i.movieImg}" alt="" /></a>
@@ -197,7 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="clearfix"> </div>
 							</div>
-							<c:forEach items="${recentComics}" var="i" varStatus="s">
+							<c:forEach items="${comicsByUnChina}" var="i" varStatus="s">
 								<div class="col-md-3 resent-grid recommended-grid movie-video-grid">
 									<div class="resent-grid-img recommended-grid-img">
 										<a href="/cinema/single.jsp"><img src="/cinema/images/${i.movieImg}" alt="" /></a>
@@ -233,13 +235,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="show-right-grids">
 						<ul>
 							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">Chinese Movies</a></li>
+							<li><a href="#">灌篮高手 スラムダンク</a></li>
 						</ul>
 					</div>
 					<div class="show-right-grids">
 						<ul>
 							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">Hindi Movies</a></li>
+							<li><a href="#">冰菓 氷菓</a></li>
 						</ul>
 					</div>
 					<div class="show-right-grids">
@@ -251,19 +253,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="show-right-grids">
 						<ul>
 							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">Tamil Movies</a></li>
+							<li><a href="#">天行九歌</a></li>
 						</ul>
 					</div>
 					<div class="show-right-grids">
 						<ul>
 							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">Kannada Movies</a></li>
+							<li><a href="#">镇魂街 第一季</a></li>
 						</ul>
 					</div>
 					<div class="show-right-grids">
 						<ul>
 							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">Marathi movies</a></li>
+							<li><a href="#">侠岚</a></li>
 						</ul>
 					</div>
 				</div>

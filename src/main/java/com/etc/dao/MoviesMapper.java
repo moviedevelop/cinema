@@ -41,4 +41,10 @@ public interface MoviesMapper {
     List<MoviesWithBLOBs> selectVarietyShows();
 
     List<MoviesWithBLOBs> selectRecentComics();
+
+    List<MoviesWithBLOBs> selectComicsOrderByMark();
+
+    List<MoviesWithBLOBs> selectComicsByChina();
+
+    List<MoviesWithBLOBs> selectComicsByUnChina();
 }

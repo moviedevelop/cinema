@@ -18,7 +18,13 @@ public class ComicsController {
     @RequestMapping("/comics")
     public ModelAndView comics(ModelAndView model){
         List<MoviesWithBLOBs> recentComics = movieService.selectRecentComics();
+        List<MoviesWithBLOBs> comicsOrderByMark = movieService.selectComicsOrderByMark();
+        List<MoviesWithBLOBs> comicsByChina = movieService.selectComicsByChina();
+        List<MoviesWithBLOBs> comicsByUnChina = movieService.selectComicsByUnChina();
         model.addObject("recentComics",recentComics);
+        model.addObject("comicsOrderByMark",comicsOrderByMark);
+        model.addObject("comicsByChina",comicsByChina);
+        model.addObject("comicsByUnChina",comicsByUnChina);
         model.setViewName("movies");
         return model;
     }

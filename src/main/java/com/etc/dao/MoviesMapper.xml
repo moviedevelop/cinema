@@ -71,6 +71,18 @@
     SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_date DESC LIMIT 0,4
   </select>
 
+    <select id="selectComicsOrderByMark" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_mark DESC LIMIT 0,4
+  </select>
+
+    <select id="selectComicsByChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 and movie_area ='中国大陆' ORDER BY movie_mark DESC LIMIT 0,4
+  </select>
+
+    <select id="selectComicsByUnChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 and movie_area !='中国大陆' ORDER BY movie_mark DESC LIMIT 0,4
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select
     <include refid="Base_Column_List" />

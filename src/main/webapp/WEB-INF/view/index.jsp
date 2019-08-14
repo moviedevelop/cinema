@@ -51,6 +51,11 @@
                             <li class="right-list"><p class="views views-info">${i.movieLang}</p></li>
                         </ul>
                     </div>
+
+                    <div class="heading-right" style="margin-left: 21%;padding-top: 15px">
+                        <a href="#" class="play-icon popup-with-zoom-anim">点  击  选  座  购  票 </a>
+                    </div>
+
                 </div>
             </c:forEach>
             <div class="clearfix"></div>
