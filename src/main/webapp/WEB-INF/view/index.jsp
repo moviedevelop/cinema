@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="heading-right" style="margin-left: 21%;padding-top: 15px">
-                        <a href="#" class="play-icon popup-with-zoom-anim">点  击  选  座  购  票 </a>
+                        <a href="/cinema/movie/tickets/${i.movieId}">点  击  选  座  购  票 </a>
                     </div>
 
                 </div>

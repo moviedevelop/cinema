@@ -93,7 +93,7 @@
         </div>
     </div>
     <div class="row" style="background-color: #CCCCCC;padding-top: 10px ;vertical-align: middle;line-height: 36px;">
-        <div class="col-md-1" style="font-size: 18px;text-align: center">厦门 <img src="/cinema/images/position.png" /></div>
+        <div class="col-md-1" style="font-size: 18px;text-align: center" onclick="">厦门 <img src="/cinema/images/position.png" /></div>
         <div class="col-md-11">
             <form class="form-horizontal">
                 <div class="form-group">

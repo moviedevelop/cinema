@@ -5,6 +5,10 @@ public class Regions {
 
     private String regionName;
 
+    private Integer regionLevel;
+
+    private String regionPinyin;
+
     private Integer parentId;
 
     public Integer getRegionId() {
@@ -23,11 +27,38 @@ public class Regions {
         this.regionName = regionName == null ? null : regionName.trim();
     }
 
+    public Integer getRegionLevel() {
+        return regionLevel;
+    }
+
+    public void setRegionLevel(Integer regionLevel) {
+        this.regionLevel = regionLevel;
+    }
+
+    public String getRegionPinyin() {
+        return regionPinyin;
+    }
+
+    public void setRegionPinyin(String regionPinyin) {
+        this.regionPinyin = regionPinyin;
+    }
+
     public Integer getParentId() {
         return parentId;
     }
 
     public void setParentId(Integer parentId) {
         this.parentId = parentId;
+    }
+
+    @Override
+    public String toString() {
+        return "Regions{" +
+                "regionId=" + regionId +
+                ", regionName='" + regionName + '\'' +
+                ", regionLevel=" + regionLevel +
+                ", regionPinyin='" + regionPinyin + '\'' +
+                ", parentId=" + parentId +
+                '}';
     }
 }

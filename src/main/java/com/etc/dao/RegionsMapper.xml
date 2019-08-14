@@ -4,11 +4,13 @@
   <resultMap id="BaseResultMap" type="com.etc.pojo.Regions">
     <id column="region_id" jdbcType="INTEGER" property="regionId" />
     <result column="region_name" jdbcType="VARCHAR" property="regionName" />
+    <result column="region_level" jdbcType="INTEGER" property="regionLevel"/>
+    <result column="region_pinyin" jdbcType="VARCHAR" property="regionPinyin"/>
     <result column="parent_id" jdbcType="INTEGER" property="parentId" />
   </resultMap>
 
   <sql id="Base_Column_List">
-    region_id, region_name, parent_id
+    region_id, region_name, region_level, region_pinyin, parent_id
   </sql>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -18,15 +20,19 @@
     where region_id = #{regionId,jdbcType=INTEGER}
   </select>
 
+  <select id="selectAllCity" resultMap="BaseResultMap">
+    SELECT * FROM regions WHERE region_level = 2 ORDER BY region_pinyin
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from regions
     where region_id = #{regionId,jdbcType=INTEGER}
   </delete>
 
   <insert id="insert" parameterType="com.etc.pojo.Regions">
-    insert into regions (region_id, region_name, parent_id
+    insert into regions (region_id, region_name, region_level, region_pinyin, parent_id
       )
-    values (#{regionId,jdbcType=INTEGER}, #{regionName,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER}
+    values (#{regionId,jdbcType=INTEGER}, #{regionName,jdbcType=VARCHAR}, #{regionLevel,jdbcType=INTEGER}, #{regionPinyin,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER}
       )
   </insert>
 
@@ -39,6 +45,12 @@
       <if test="regionName != null">
         region_name,
       </if>
+      <if test="regionLevel != null">
+        region_level,
+      </if>
+      <if test="regionPinyin != null">
+        region_pinyin,
+      </if>
       <if test="parentId != null">
         parent_id,
       </if>
@@ -49,6 +61,12 @@
       </if>
       <if test="regionName != null">
         #{regionName,jdbcType=VARCHAR},
+      </if>
+      <if test="regionLevel != null">
+        #{regionLevel,jdbcType=INTEGER},
+      </if>
+      <if test="regionPinyin != null">
+        #{regionPinyin,jdbcType=VARCHAR},
       </if>
       <if test="parentId != null">
         #{parentId,jdbcType=INTEGER},
