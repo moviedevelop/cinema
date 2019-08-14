@@ -36,4 +36,8 @@ public interface MovieService {
     List<MoviesWithBLOBs> selectComicsByChina();
 
     List<MoviesWithBLOBs> selectComicsByUnChina();
+
+    List<MoviesWithBLOBs> selectRecommendedShows();
+
+    List<MoviesWithBLOBs> selectLikeComics();
 }

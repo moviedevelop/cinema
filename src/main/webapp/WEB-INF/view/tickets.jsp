@@ -28,6 +28,7 @@
 
         .detail{
             padding-left: 0px;
+            color: white;
         }
 
         .detail span{
@@ -38,7 +39,7 @@
             position: relative;
             overflow: hidden;
             padding: 1.5rem;
-            background-color: #87CEFF;
+            background-color: #8B7D6B;
         }
         .Poster{
             position: relative;
@@ -77,19 +78,18 @@
 <div class="container">
     <div class="row Info-container">
         <div class="col-md-3 image">
-            <img src="/cinema/images/p1524359776.jpg" class="Poster"/>
+            <img src="/cinema/images/${movieTickets.movieImg}" class="Poster"/>
         </div>
         <div class="col-md-9 detail" >
-            <h2 style="margin-top: 0px">魔童降世</h2>
-            <span>导演：</span><br>
-            <span>编剧：</span><br>
-            <span>主演：</span><br>
-            <span>类型：</span><br>
-            <span>制片国家/地区：</span><br>
-            <span>语言：</span><br>
-            <span>上映日期：</span><br>
-            <span>片长：</span><br>
-            <span>集数：</span><br>
+            <h2 style="margin-top: 0px;color: yellow">${movieTickets.movieName}</h2><br>
+            <span>导演：${movieTickets.movieDirector}</span><br>
+            <span>编剧：${movieTickets.movieWriter}</span><br>
+            <span>主演：${movieTickets.movieActor}</span><br>
+            <span>类型：${movieTickets.movieType}</span><br>
+            <span>制片国家/地区：${movieTickets.movieArea}</span><br>
+            <span>语言：${movieTickets.movieLang}</span><br>
+            <span>上映日期：${movieTickets.movieDate}</span><br>
+            <span>片长：${movieTickets.movieTime}</span><br>
         </div>
     </div>
     <div class="row" style="background-color: #CCCCCC;padding-top: 10px ;vertical-align: middle;line-height: 36px;">
@@ -125,10 +125,10 @@
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
             <h3>星美影视商城</h3>
-            <p>moumoumou</p>
-            <p>nncjdnj</p>
+            <p>思明区万达影城</p>
+            <p>最近场次</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 25px;"><span style="color: red;font-size: 20px">25元</span>起</div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -136,7 +136,7 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 20px;"><span style="color: red;">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 20px;"><span style="color: red;font-size: 20px">25元</span>起</div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -144,7 +144,7 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -152,7 +152,7 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -160,7 +160,7 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -168,7 +168,7 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -176,7 +176,7 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
     </div>
 
 </div>

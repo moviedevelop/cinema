@@ -93,4 +93,14 @@ public class MovieServiceImpl implements MovieService {
         return mapper.selectComicsByUnChina();
     }
 
+    @Override
+    public List<MoviesWithBLOBs> selectRecommendedShows() {
+        return mapper.selectRecommendedShows();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectLikeComics() {
+        return mapper.selectLikeComics();
+    }
+
 }

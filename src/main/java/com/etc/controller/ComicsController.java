@@ -21,10 +21,12 @@ public class ComicsController {
         List<MoviesWithBLOBs> comicsOrderByMark = movieService.selectComicsOrderByMark();
         List<MoviesWithBLOBs> comicsByChina = movieService.selectComicsByChina();
         List<MoviesWithBLOBs> comicsByUnChina = movieService.selectComicsByUnChina();
+        List<MoviesWithBLOBs> likeComics = movieService.selectLikeComics();
         model.addObject("recentComics",recentComics);
         model.addObject("comicsOrderByMark",comicsOrderByMark);
         model.addObject("comicsByChina",comicsByChina);
         model.addObject("comicsByUnChina",comicsByUnChina);
+        model.addObject("likeComics",likeComics);
         model.setViewName("movies");
         return model;
     }

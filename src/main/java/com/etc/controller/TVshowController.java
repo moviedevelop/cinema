@@ -23,12 +23,14 @@ public class TVshowController {
         List<MoviesWithBLOBs> telePlaysByChina = movieService.selectTelePlaysByChina();
         List<MoviesWithBLOBs> telePlaysByUnChina = movieService.selectTelePlaysByUnChina();
         List<MoviesWithBLOBs> varietyShows = movieService.selectVarietyShows();
+        List<MoviesWithBLOBs> recommendedShows = movieService.selectRecommendedShows();
         model.addObject("highMarkTelePlays",highMarkTelePlays);
         model.addObject("telePlays",telePlays);
         model.addObject("recentTelePlays",recentTelePlays);
         model.addObject("telePlaysByChina",telePlaysByChina);
         model.addObject("telePlaysByUnChina",telePlaysByUnChina);
         model.addObject("varietyShows",varietyShows);
+        model.addObject("recommendedShows",recommendedShows);
         model.setViewName("shows");
         return model;
     }

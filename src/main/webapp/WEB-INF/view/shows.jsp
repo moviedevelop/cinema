@@ -249,60 +249,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-2 show-grid-right">
 					<h3>为你推荐</h3>
+					<c:forEach items="${recommendedShows}" var="i" varStatus="s">
 					<div class="show-right-grids">
 						<ul>
 							<li class="tv-img"><a href="#"><img src="/cinema/images/tv.png" alt="" /></a></li>
-							<li><a href="#">最好的我们</a></li>
+							<li><a href="#">${i.movieName}</a></li>
 						</ul>
 					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/tv.png" alt="" /></a></li>
-							<li><a href="#">致我们单纯的小美好</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/tv.png" alt="" /></a></li>
-							<li><a href="#">楚乔传</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/tv.png" alt="" /></a></li>
-							<li><a href="#">白夜追凶</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/tv.png" alt="" /></a></li>
-							<li><a href="#">香蜜沉沉烬如霜</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/tv.png" alt="" /></a></li>
-							<li><a href="#">向往的生活 第二季</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/tv.png" alt="" /></a></li>
-							<li><a href="#">明星大侦探 第一季</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/tv.png" alt="" /></a></li>
-							<li><a href="#">极限挑战 第二季</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/tv.png" alt="" /></a></li>
-							<li><a href="#">一千零一夜 第四季</a></li>
-						</ul>
-					</div>
+					</c:forEach>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

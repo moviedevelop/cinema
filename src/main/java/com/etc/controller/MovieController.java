@@ -34,4 +34,12 @@ public class MovieController {
         modelAndView.setViewName("single");
         return modelAndView;
     }
+
+    @RequestMapping("/tickets/{movieId}")
+    public ModelAndView movieTickets(@PathVariable Integer movieId, ModelAndView modelAndView){
+        MoviesWithBLOBs movieTickets = movieService.selectByPrimaryKey(movieId);
+        modelAndView.addObject("movieTickets",movieTickets);
+        modelAndView.setViewName("tickets");
+        return modelAndView;
+    }
 }

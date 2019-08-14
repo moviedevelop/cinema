@@ -18,7 +18,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="/cinema/css/style.css" rel='stylesheet' type='text/css' media="all"/>
 	<script src="/cinema/js/jquery-3.4.1.min.js"></script>
 	<!--start-smoth-scrolling-->
-
+    <style>
+    </style>
 </head>
   <body>
 
@@ -226,48 +227,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-2 show-grid-right">
 					<h3>猜你喜欢</h3>
+                    <c:forEach items="${likeComics}" var="i" varStatus="s">
 					<div class="show-right-grids">
 						<ul>
 							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">一人之下 第一季</a></li>
+							<li><a id="movie-name" href="#">${i.movieName}</a></li>
 						</ul>
 					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">灌篮高手 スラムダンク</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">冰菓 氷菓</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">画江湖之不良人</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">天行九歌</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">镇魂街 第一季</a></li>
-						</ul>
-					</div>
-					<div class="show-right-grids">
-						<ul>
-							<li class="tv-img"><a href="#"><img src="/cinema/images/mv.png" alt="" /></a></li>
-							<li><a href="#">侠岚</a></li>
-						</ul>
-					</div>
+                    </c:forEach>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
