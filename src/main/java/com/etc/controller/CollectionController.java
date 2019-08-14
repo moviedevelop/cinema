@@ -20,11 +20,14 @@ public class CollectionController {
     @RequestMapping("/add")
     @ResponseBody
     public Message addCollection(@RequestBody Collections collections, HttpSession session){
-        collections.setUserId((Integer) session.getAttribute("userId"));
-        System.out.println(collections.toString());
-        collectionService.insertSelective(collections);
         Message message = new Message();
-        message.setMessage("添加收藏成功！");
+        if (session.getAttribute("userId") != null){
+            collections.setUserId((Integer) session.getAttribute("userId"));
+            collectionService.insertSelective(collections);
+            message.setMessage("收藏成功");
+        }else {
+            message.setMessage("亲，要先登录哦");
+        }
         return message;
     }
 }

@@ -1,11 +1,10 @@
-package com.etc.dao;
+package com.etc.service;
 
 import com.etc.pojo.Comments;
 
 import java.util.List;
 
-public interface CommentsMapper {
-
+public interface CommentService {
     int deleteByPrimaryKey(Integer commentId);
 
     int insert(Comments record);
