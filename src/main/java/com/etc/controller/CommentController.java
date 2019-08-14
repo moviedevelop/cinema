@@ -8,10 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/comment")
@@ -35,8 +35,13 @@ public class CommentController {
         return message;
     }
 
-    public ModelAndView selectCommentsLimit(ModelAndView modelAndView,Comments comments){
-        return modelAndView;
+    @RequestMapping("/limit")
+    @ResponseBody
+    public List<Comments> selectCommentsLimit(@RequestBody Comments comments,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        comments.setUserId((Integer) session.getAttribute("userId"));
+        List<Comments> myComment = commentService.selectCommentLimit(comments);
+        return myComment;
     }
 
 }

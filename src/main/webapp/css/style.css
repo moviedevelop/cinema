@@ -1209,7 +1209,7 @@ width:100%;
     margin: 1em 0;
     width: 80%;
 }
-.box input[type="submit"] {
+.box input[type="button"] {
     outline: none;
     font-style: normal;
     padding: 8px 20px;
@@ -1229,7 +1229,7 @@ width:100%;
     -o-transition: .5s all;
     -ms-transition: .5s all;
 }
-.box input[type="submit"]:hover{
+.box input[type="button"]:hover{
     text-decoration: none;
     color: #272C2E;
     background: #E2E2E2;

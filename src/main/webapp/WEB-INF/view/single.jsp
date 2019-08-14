@@ -52,6 +52,23 @@
 
 </head>
 <body>
+<script>
+    Date.prototype.Format = function (fmt) { //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "H+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    }
+</script>
 <%@include file="topnav.jsp" %>
 <%@include file="leftside.jsp" %>
 <div class="alert"
@@ -80,8 +97,37 @@
                     <br>
                     <button class="btn btn-link" onclick="addCollection()">想看</button>
                     <button class="btn btn-link" onclick="addComment()">写影评</button>
+                    <button class="btn btn-link" onclick="selectComment()">我的评论</button>
                 </div>
                 <script>
+                    function selectComment() {
+
+                        if (${userId == null && userId != ''}){
+                            $('.alert').html("亲，要先登录哦").addClass('alert-danger').show().delay(2000).fadeOut();
+                        }else{
+                            var data = {};
+                            data["movieId"] = ${movieDetail.movieId};
+                            var postComment = JSON.stringify(data);
+                            $.ajax({
+                                type:"post",
+                                url:"/cinema/comment/limit",
+                                dataType: "json",
+                                contentType:"application/json",
+                                data:postComment,
+                                success:function (comments) {
+                                    var str = "";
+                                    for (var i = 0; i < comments.length;i++){
+                                        //console.log(comments[i].commentContent + "-->" + comments[i].users.userName);
+                                        str += "<div class='media'><h5>"+ comments[i].users.userName +"</h5><div class='media-left'>" +
+                                        "<img src='"+ comments[i].users.userImg + "' > </div><div class='media-body'><p>" + comments[i].commentContent
+                                        + "</p><span>发布时间 :" + comments[i].commentTime   + "</span><br><span>评分：" + comments[i].commentScore + "</span></div></div>"
+                                    }
+                                    $("#comment").html(str);
+                                }
+                            })
+                        }
+                    }
+                    
                     function addComment() {
                         if ($("#box").css("display") == "none") {
                             $("#box").css("display", "block");
@@ -177,6 +223,7 @@
                             <div class="clearfix"></div>
                         </form>
                         <script>
+
                             function doComment() {
                                 var commentForm = $("#comment-form").serializeArray();
                                 var data = {};
@@ -214,6 +261,10 @@
                                         data: comment,
                                         success: function (json) {
                                             $('.alert').html(json.message).addClass('alert-info').show().delay(2000).fadeOut();
+                                            $("#box").css("display", "none");
+                                            $("#comment").prepend("<div class='media'><h5>${userName}</h5><div class='media-left'>" +
+                                                "<img src='/cinema/images/avtar.png' > </div><div class='media-body'><p>" + data.commentContent
+                                                + "</p><span>发布时间 :" + new Date().Format("yyyy-MM-dd") + "</span><br><span>评分：" + data.commentScore + "</span></div></div>");
                                         }
                                     })
                                 }
@@ -221,15 +272,14 @@
                             }
                         </script>
                     </div>
-                    <div class="all-comments-buttons">
+                    <%--<div class="all-comments-buttons">
                         <ul>
                             <li><a href="#" class="top">Top Comments</a></li>
-                            <li><a href="#" class="top newest">Newest First</a></li>
                             <li><a href="#" class="top my-comment">My Comments</a></li>
                         </ul>
-                    </div>
+                    </div>--%>
                 </div>
-                <div class="media-grids">
+                <div class="media-grids" id="comment">
                     <c:forEach items="${commentsList}" var="i" varStatus="s">
                         <c:if test="${s.count <= 6}">
                             <div class="media">
@@ -239,7 +289,9 @@
                                 </div>
                                 <div class="media-body">
                                     <p>${i.commentContent}</p>
-                                    <span>发布时间 : <fmt:formatDate value="${i.commentTime}" pattern="yyyy-MM-dd"/></span>
+                                    <span>发布时间 : <fmt:formatDate value="${i.commentTime}"
+                                                                 pattern="yyyy-MM-dd"/></span><br>
+                                    <span>评分：${i.commentScore}</span>
                                 </div>
                             </div>
                         </c:if>
