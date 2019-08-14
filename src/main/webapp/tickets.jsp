@@ -13,13 +13,32 @@
     <link href="/cinema/css/style.css" rel='stylesheet' type='text/css' media="all"/>
     <script src="/cinema/js/jquery-3.4.1.min.js"></script>
     <style>
+        body{
+            padding-top: 0;
+            background: #333237;
+        }
+        .container{
+            height: 100%;
+            background: #ffffff;
+        }
+        .image{
+            padding-right: 0px;
+            width: 22%;
+        }
+
+        .detail{
+            padding-left: 0px;
+        }
+
         .detail span{
+            padding: 0px;
             font-size: 16px;
         }
-        .Info--container {
+        .Info-container {
             position: relative;
             overflow: hidden;
             padding: 1.5rem;
+            background-color: #87CEFF;
         }
         .Poster{
             position: relative;
@@ -56,8 +75,8 @@
 </head>
 <body>
 <div class="container">
-    <div class="row Info--container">
-        <div class="col-md-3">
+    <div class="row Info-container">
+        <div class="col-md-3 image">
             <img src="/cinema/images/p1524359776.jpg" class="Poster"/>
         </div>
         <div class="col-md-9 detail" >
@@ -74,7 +93,7 @@
         </div>
     </div>
     <div class="row" style="background-color: #CCCCCC;padding-top: 10px ;vertical-align: middle;line-height: 36px;">
-        <div class="col-md-1" style="font-size: 18px">厦门</div>
+        <div class="col-md-1" style="font-size: 18px;text-align: center">厦门 <img src="/cinema/images/position.png" /></div>
         <div class="col-md-11">
             <form class="form-horizontal">
                 <div class="form-group">
@@ -118,6 +137,38 @@
             <p>nncjdnj</p>
         </div>
         <div class="col-md-2" style="text-align: right;margin-top: 20px;"><span style="color: red;">25元</span>起</div>
+    </div>
+    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
+        <div class="col-md-10">
+            <h3>星美影视商城</h3>
+            <p>moumoumou</p>
+            <p>nncjdnj</p>
+        </div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
+    </div>
+    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
+        <div class="col-md-10">
+            <h3>星美影视商城</h3>
+            <p>moumoumou</p>
+            <p>nncjdnj</p>
+        </div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
+    </div>
+    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
+        <div class="col-md-10">
+            <h3>星美影视商城</h3>
+            <p>moumoumou</p>
+            <p>nncjdnj</p>
+        </div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
+    </div>
+    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
+        <div class="col-md-10">
+            <h3>星美影视商城</h3>
+            <p>moumoumou</p>
+            <p>nncjdnj</p>
+        </div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;">25元</span>起</div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
