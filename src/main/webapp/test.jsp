@@ -17,12 +17,13 @@
 </head>
 <body>
 <button id="parentIframe">点我</button>
+<span id="region_id"></span>
 <script>
 
     $('#parentIframe').on('click', function(){
         layer.open({
             type: 2,
-            title: 'iframe父子操作',
+            title: '选择城市',
             maxmin: true,
             shadeClose: true, //点击遮罩关闭层
             area : ['800px' , '520px'],

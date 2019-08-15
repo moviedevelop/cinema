@@ -12,51 +12,62 @@
     <!-- Custom Theme files -->
     <link href="/cinema/css/style.css" rel='stylesheet' type='text/css' media="all"/>
     <script src="/cinema/js/jquery-3.4.1.min.js"></script>
+    <script src="/cinema/js/jquery-3.4.1.min.js"></script>
+    <script src="/cinema/layui/layui.js"></script>
+    <script src="/cinema/layui/layui.all.js"></script>
+    <%--<link href="/cinema/layui/css/layui.css" type="text/css" rel="stylesheet"/>--%>
     <style>
-        body{
+        body {
             padding-top: 0;
             background: #333237;
         }
-        .container{
+
+        .container {
             height: 100%;
             background: #ffffff;
         }
-        .image{
+
+        .image {
             padding-right: 0px;
             width: 22%;
         }
 
-        .detail{
+        .detail {
             padding-left: 0px;
             color: white;
         }
 
-        .detail span{
+        .detail span {
             padding: 0px;
             font-size: 16px;
         }
+
         .Info-container {
             position: relative;
             overflow: hidden;
             padding: 1.5rem;
             background-color: #8B7D6B;
         }
-        .Poster{
+
+        .Poster {
             position: relative;
             z-index: 1;
             width: 17.6rem;
             height: 26.0rem;
         }
-        .show{
+
+        .show {
             margin-top: 15px;
             border-bottom: 1px solid #9D9D9D;
         }
-        ul{
+
+        ul {
             display: inline;
             padding: 15px;
             margin: 0;
         }
-        ul a{
+
+        ul a {
             text-decoration: none;
             color: gray;
             display: inline-block;
@@ -64,14 +75,20 @@
             margin-bottom: 20px;
             font-size: 15px;
         }
-        ul a:hover{
+
+        ul a:hover {
             color: orangered;
             text-decoration: underline;
         }
-        ul a li{
+
+        ul a li {
             list-style-type: none;
         }
 
+        #region_name{
+            padding: 0px;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -80,7 +97,7 @@
         <div class="col-md-3 image">
             <img src="/cinema/images/${movieTickets.movieImg}" class="Poster"/>
         </div>
-        <div class="col-md-9 detail" >
+        <div class="col-md-9 detail">
             <h2 style="margin-top: 0px;color: yellow">${movieTickets.movieName}</h2><br>
             <span>导演：${movieTickets.movieDirector}</span><br>
             <span>编剧：${movieTickets.movieWriter}</span><br>
@@ -93,20 +110,38 @@
         </div>
     </div>
     <div class="row" style="background-color: #CCCCCC;padding-top: 10px ;vertical-align: middle;line-height: 36px;">
-        <div class="col-md-1" style="font-size: 18px;text-align: center" onclick="">厦门 <img src="/cinema/images/position.png" /></div>
-        <div class="col-md-11">
+        <div class="col-md-2" style="font-size: 18px;text-align: center" id="parentIframe">
+            <span style="display: none;" id="region_id"></span>
+            <span id="region_name">厦门</span>
+            <img src="/cinema/images/position.png"/>
+        </div>
+        <div class="col-md-10">
             <form class="form-horizontal">
                 <div class="form-group">
                     <div class="col-md-11" style="margin-top: 3px">
-                        <input type="search" class="form-control" placeholder="找影院" />
+                        <input type="search" class="form-control" placeholder="找影院"/>
                     </div>
-                    <div class="col-md-1" >
-                        <input type="submit" class="btn btn-primary" value="筛选" />
+                    <div class="col-md-1">
+                        <input type="submit" class="btn btn-primary" value="筛选"/>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+
+        $('#parentIframe').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '选择城市',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['800px', '520px'],
+                content: '/cinema/region/all'
+            });
+        });
+    </script>
 
     <div class="row show">
         <ul>
@@ -128,7 +163,9 @@
             <p>思明区万达影城</p>
             <p>最近场次</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 25px;"><span style="color: red;font-size: 20px">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 25px;"><span
+                style="color: red;font-size: 20px">25元</span>起
+        </div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -136,7 +173,9 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 20px;"><span style="color: red;font-size: 20px">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 20px;"><span
+                style="color: red;font-size: 20px">25元</span>起
+        </div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -144,7 +183,9 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
+                style="color: red;font-size: 20px">25元</span>起
+        </div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -152,7 +193,9 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
+                style="color: red;font-size: 20px">25元</span>起
+        </div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -160,7 +203,9 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
+                style="color: red;font-size: 20px">25元</span>起
+        </div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -168,7 +213,9 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
+                style="color: red;font-size: 20px">25元</span>起
+        </div>
     </div>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-10">
@@ -176,7 +223,9 @@
             <p>moumoumou</p>
             <p>nncjdnj</p>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span style="color: red;font-size: 20px">25元</span>起</div>
+        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
+                style="color: red;font-size: 20px">25元</span>起
+        </div>
     </div>
 
 </div>
