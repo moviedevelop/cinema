@@ -85,9 +85,17 @@
             list-style-type: none;
         }
 
-        #region_name{
+        #region_name {
             padding: 0px;
             font-size: 18px;
+        }
+
+        .cinema-info p{
+            font-size: 14px;
+        }
+
+        .cinema-info h4{
+            font-weight: bold;
         }
     </style>
 </head>
@@ -119,7 +127,7 @@
             <form class="form-horizontal">
                 <div class="form-group">
                     <div class="col-md-11" style="margin-top: 3px">
-                        <input type="search" class="form-control" placeholder="找影院"/>
+                        <input type="search" id="search" class="form-control" placeholder="找影院"/>
                     </div>
                     <div class="col-md-1">
                         <input type="submit" class="btn btn-primary" value="筛选"/>
@@ -128,6 +136,20 @@
             </form>
         </div>
     </div>
+
+    <script>
+        $(function () {
+            $("#search").keyup(function () {
+                var value = $(this).val();
+                $(".movie-info").each(function () {
+                    $(this).hide();
+                    if ($(this).text().indexOf($.trim(value)) >= 0) {
+                        $(this).show();
+                    }
+                });
+            });
+        });
+    </script>
 
     <script>
 
@@ -157,76 +179,18 @@
         </ul>
     </div>
 
-    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
-        <div class="col-md-10">
-            <h3>星美影视商城</h3>
-            <p>思明区万达影城</p>
-            <p>最近场次</p>
+    <c:forEach items="${cinemaVos}" var="i">
+        <div class="row movie-info" style="border-bottom: 1px solid #9D9D9D;">
+            <div class="col-md-10 cinema-info">
+                <h4>${i.cinemaName}</h4>
+                <p>${i.cinemaAddress}</p>
+                <p>最近场次</p>
+            </div>
+            <div class="col-md-2" style="text-align: right;margin-top: 25px;"><span
+                    style="color: red;font-size: 20px">25元</span>起
+            </div>
         </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 25px;"><span
-                style="color: red;font-size: 20px">25元</span>起
-        </div>
-    </div>
-    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
-        <div class="col-md-10">
-            <h3>大头斌影视商城</h3>
-            <p>moumoumou</p>
-            <p>nncjdnj</p>
-        </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 20px;"><span
-                style="color: red;font-size: 20px">25元</span>起
-        </div>
-    </div>
-    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
-        <div class="col-md-10">
-            <h3>星美影视商城</h3>
-            <p>moumoumou</p>
-            <p>nncjdnj</p>
-        </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
-                style="color: red;font-size: 20px">25元</span>起
-        </div>
-    </div>
-    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
-        <div class="col-md-10">
-            <h3>星美影视商城</h3>
-            <p>moumoumou</p>
-            <p>nncjdnj</p>
-        </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
-                style="color: red;font-size: 20px">25元</span>起
-        </div>
-    </div>
-    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
-        <div class="col-md-10">
-            <h3>星美影视商城</h3>
-            <p>moumoumou</p>
-            <p>nncjdnj</p>
-        </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
-                style="color: red;font-size: 20px">25元</span>起
-        </div>
-    </div>
-    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
-        <div class="col-md-10">
-            <h3>星美影视商城</h3>
-            <p>moumoumou</p>
-            <p>nncjdnj</p>
-        </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
-                style="color: red;font-size: 20px">25元</span>起
-        </div>
-    </div>
-    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
-        <div class="col-md-10">
-            <h3>星美影视商城</h3>
-            <p>moumoumou</p>
-            <p>nncjdnj</p>
-        </div>
-        <div class="col-md-2" style="text-align: right;margin-top: 18px;"><span
-                style="color: red;font-size: 20px">25元</span>起
-        </div>
-    </div>
+    </c:forEach>
 
 </div>
 </div>

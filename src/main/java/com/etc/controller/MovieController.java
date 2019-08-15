@@ -2,8 +2,10 @@ package com.etc.controller;
 
 import com.etc.pojo.Comments;
 import com.etc.pojo.MoviesWithBLOBs;
+import com.etc.service.CinemaService;
 import com.etc.service.CommentService;
 import com.etc.service.MovieService;
+import com.etc.vo.CinemaVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,9 @@ public class MovieController {
     @Autowired
     private CommentService commentService;
 
+    @Autowired
+    private CinemaService cinemaService;
+
     @RequestMapping("/detail/{movieId}")
     public ModelAndView movieDetail(@PathVariable Integer movieId, ModelAndView modelAndView){
         MoviesWithBLOBs movieDetail = movieService.selectByPrimaryKey(movieId);
@@ -36,9 +41,14 @@ public class MovieController {
     }
 
     @RequestMapping("/tickets/{movieId}")
-    public ModelAndView movieTickets(@PathVariable Integer movieId, ModelAndView modelAndView){
+    public ModelAndView movieTickets(@PathVariable Integer movieId, ModelAndView modelAndView,Integer cityId){
+        if (cityId == null){
+            cityId = 1183;
+        }
         MoviesWithBLOBs movieTickets = movieService.selectByPrimaryKey(movieId);
         modelAndView.addObject("movieTickets",movieTickets);
+        List<CinemaVo> cinemaVos = cinemaService.selectCinemaByCity(cityId);
+        modelAndView.addObject("cinemaVos",cinemaVos);
         modelAndView.setViewName("tickets");
         return modelAndView;
     }

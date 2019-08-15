@@ -1,6 +1,9 @@
 package com.etc.dao;
 
 import com.etc.pojo.Cinemas;
+import com.etc.vo.CinemaVo;
+
+import java.util.List;
 
 public interface CinemasMapper {
 
@@ -11,7 +14,6 @@ public interface CinemasMapper {
 
     int insertSelective(Cinemas record);
 
-
     Cinemas selectByPrimaryKey(Integer cinemaId);
 
     int updateByPrimaryKeySelective(Cinemas record);
@@ -19,4 +21,6 @@ public interface CinemasMapper {
     int updateByPrimaryKeyWithBLOBs(Cinemas record);
 
     int updateByPrimaryKey(Cinemas record);
+
+    List<CinemaVo> selectCinemaByCity(Integer cityId);
 }
