@@ -51,26 +51,13 @@
     <div class="row">
         <input type="text" id="searchBox" class="form-control">
     </div>
-    <p><span style="display: none" id="region"></span><span id="location"> 暂无 </span> 选择当前城市</p>
+    <p><span style="display: none" id="region_area"></span><span id="location_area"> 暂无 </span> 选择当前城市</p>
     <div class="row">
         <ul class="list-unstyled" id="dataSet">
-            <c:set var="alph" value="65"/>
-            <c:set var="count" value="1"/>
-            <c:forEach items="${allCity}" varStatus="s" var="i">
-                <c:if test="${i.regionPinyin.charAt(0) != alph}">
-                    <c:set var="alph" value="${alph + 1}"/>
-                    <c:set var="count" value="1"/>
-                    <br style="clear: both">
-                </c:if>
-                <c:if test="${i.regionPinyin.charAt(0) == alph}">
-                    <c:if test="${count == 1}">
-                        <h4 style="text-align: center">${i.regionPinyin}</h4>
-                        <c:set var="count" value="${count + 1}"/>
-                    </c:if>
+            <c:forEach items="${counties}" varStatus="s" var="i">
 
-                    <li onclick="choose(this)"><span style="display: none">${i.regionId}</span>${i.regionName}</li>
+                <li onclick="choose(this)"><span style="display: none">${i.regionId}</span>${i.regionName}</li>
 
-                </c:if>
             </c:forEach>
         </ul>
     </div>
@@ -80,8 +67,8 @@
         var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
         var region_id = $(th).children().text();
         var region_name = $(th)[0].innerText;
-        $("#region").text(region_id);
-        $("#location").text(region_name);
+        $("#region_area").text(region_id);
+        $("#location_area").text(region_name);
         parent.$("#region_name").text(region_name);
         parent.$("#region_id").text(region_id);
         parent.layer.close(index);

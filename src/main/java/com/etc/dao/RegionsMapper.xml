@@ -25,6 +25,10 @@
     SELECT * FROM regions WHERE region_level = 2 ORDER BY region_pinyin
   </select>
 
+  <select id="selectCountyByCityId" resultMap="BaseResultMap">
+    SELECT region_id,region_name FROM regions WHERE parent_id = #{parentId}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from regions
     where region_id = #{regionId,jdbcType=INTEGER}

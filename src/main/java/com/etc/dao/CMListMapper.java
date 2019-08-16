@@ -1,6 +1,11 @@
 package com.etc.dao;
 
 import com.etc.pojo.CMList;
+import com.etc.vo.ArgumentVo;
+import com.etc.vo.CMListVo;
+import com.etc.vo.MovieTimeListVo;
+
+import java.util.List;
 
 public interface CMListMapper {
 
@@ -15,4 +20,8 @@ public interface CMListMapper {
     int updateByPrimaryKeySelective(CMList record);
 
     int updateByPrimaryKey(CMList record);
+
+    List<MovieTimeListVo> selectUseTime(Integer movieId);
+
+    List<CMListVo> selectCinemaInfo(ArgumentVo args);
 }

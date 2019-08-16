@@ -19,4 +19,6 @@ public interface RegionsMapper {
     int updateByPrimaryKey(Regions record);
 
     List<Regions> selectAllCity();
+
+    List<Regions> selectCountyByCityId(Integer parentId);
 }

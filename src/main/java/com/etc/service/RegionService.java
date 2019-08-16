@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface RegionService {
     List<Regions> selectAllCity();
+
+    List<Regions> selectCountyByCityId(Integer parentId);
 }

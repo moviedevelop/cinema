@@ -1,6 +1,8 @@
 package com.etc.pojo;
 
-public class Regions {
+import java.io.Serializable;
+
+public class Regions implements Serializable {
     private Integer regionId;
 
     private String regionName;

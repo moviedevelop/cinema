@@ -1,6 +1,6 @@
 package com.etc.vo;
 
-public class CinemaVo {
+public class CMListVo {
     private Integer cinemaId;
 
     private String cinemaName;
@@ -61,5 +61,4 @@ public class CinemaVo {
                 ", startTime='" + startTime + '\'' +
                 '}';
     }
-
 }

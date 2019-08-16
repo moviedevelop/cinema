@@ -9,9 +9,36 @@
     <result column="show_time" jdbcType="DATE" property="showTime" />
   </resultMap>
 
+  <resultMap id="showTime" type="com.etc.vo.MovieTimeListVo">
+    <result column="show_time" jdbcType="DATE" property="showTime"/>
+  </resultMap>
+
+  <resultMap id="cinemaInfo" type="com.etc.vo.CMListVo">
+    <result column="movie_start_time" property="startTime"/>
+    <result column="min_price" property="minPrice"/>
+    <result column="cinema_id" property="cinemaId"/>
+    <result column="cinema_name" property="cinemaName"/>
+    <result column="cinema_address" property="cinemaAddress"/>
+  </resultMap>
+
   <sql id="Base_Column_List">
     list_id, movie_id, room_id, price, show_time
   </sql>
+
+  <select id="selectCinemaInfo" resultMap="cinemaInfo" parameterType="com.etc.vo.ArgumentVo">
+    SELECT
+    MIN(cm.start_time) movie_start_time,MIN(price) min_price,c.cinema_id,c.cinema_name,c.cinema_address
+    FROM c_m_list cm,cinemas c,sroom s WHERE cm.room_id = s.room_id AND s.cinema_id = c.cinema_id
+    AND cm.movie_id = #{movieId} AND c.cinema_city = #{cityId}
+    <if test="countyId != null">
+      and c.cinema_area = #{countyId}
+    </if>
+    AND cm.show_time = #{chooseDay} GROUP BY c.cinema_id;
+  </select>
+
+  <select id="selectUseTime" resultMap="showTime">
+    SELECT DISTINCT show_time FROM c_m_list WHERE movie_id = #{movieId};
+  </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

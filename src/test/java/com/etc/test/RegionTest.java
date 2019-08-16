@@ -26,4 +26,12 @@ public class RegionTest {
             System.out.println(region.toString());
         }
     }
+
+    @Test
+    public void selectCountyByCityId(){
+        List<Regions> counties = mapper.selectCountyByCityId(1183);
+        for (Regions region : counties){
+            System.out.println(region.toString());
+        }
+    }
 }

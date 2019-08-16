@@ -16,4 +16,9 @@ public class RegionServiceImpl implements RegionService {
     public List<Regions> selectAllCity() {
         return mapper.selectAllCity();
     }
+
+    @Override
+    public List<Regions> selectCountyByCityId(Integer parentId) {
+        return mapper.selectCountyByCityId(parentId);
+    }
 }

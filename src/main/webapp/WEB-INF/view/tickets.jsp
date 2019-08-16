@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -119,7 +120,7 @@
     </div>
     <div class="row" style="background-color: #CCCCCC;padding-top: 10px ;vertical-align: middle;line-height: 36px;">
         <div class="col-md-2" style="font-size: 18px;text-align: center" id="parentIframe">
-            <span style="display: none;" id="region_id"></span>
+            <span style="display: none;" id="region_id">1183</span>
             <span id="region_name">厦门</span>
             <img src="/cinema/images/position.png"/>
         </div>
@@ -130,7 +131,7 @@
                         <input type="search" id="search" class="form-control" placeholder="找影院"/>
                     </div>
                     <div class="col-md-1">
-                        <input type="submit" class="btn btn-primary" value="筛选"/>
+                        <input type="button" id="cinema_area" class="btn btn-primary" value="筛选"/>
                     </div>
                 </div>
             </form>
@@ -163,31 +164,40 @@
                 content: '/cinema/region/all'
             });
         });
+
+        $('#cinema_area').on('click', function () {
+            var parentId = $("#region_id").text();
+            layer.open({
+                type: 2,
+                title: '选择区域',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['800px', '520px'],
+                content: '/cinema/region/county/'+parentId
+            });
+        });
     </script>
+
 
     <div class="row show">
         <ul>
+            <c:forEach var="i" items="${movieTimes}">
             <a>
-                <li>今天08-13</li>
+                <li><fmt:formatDate value="${i.showTime}" pattern="MM-dd"/> </li>
             </a>
-            <a>
-                <li>今天08-13</li>
-            </a>
-            <a>
-                <li>今天08-13</li>
-            </a>
+            </c:forEach>
         </ul>
     </div>
 
-    <c:forEach items="${cinemaVos}" var="i">
+    <c:forEach items="${cmListVos}" var="i">
         <div class="row movie-info" style="border-bottom: 1px solid #9D9D9D;">
             <div class="col-md-10 cinema-info">
                 <h4>${i.cinemaName}</h4>
                 <p>${i.cinemaAddress}</p>
-                <p>最近场次</p>
+                <p>最近场次:${i.startTime}</p>
             </div>
             <div class="col-md-2" style="text-align: right;margin-top: 25px;"><span
-                    style="color: red;font-size: 20px">25元</span>起
+                    style="color: red;font-size: 20px">${i.minPrice}元</span>起
             </div>
         </div>
     </c:forEach>

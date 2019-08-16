@@ -262,6 +262,7 @@
                                         success: function (json) {
                                             $('.alert').html(json.message).addClass('alert-info').show().delay(2000).fadeOut();
                                             $("#box").css("display", "none");
+                                            $("#nobody").css("display","none");
                                             $("#comment").prepend("<div class='media'><h5>${userName}</h5><div class='media-left'>" +
                                                 "<img src='/cinema/images/avtar.png' > </div><div class='media-body'><p>" + data.commentContent
                                                 + "</p><span>发布时间 :" + new Date().Format("yyyy-MM-dd") + "</span><br><span>评分：" + data.commentScore + "</span></div></div>");
@@ -280,6 +281,9 @@
                     </div>--%>
                 </div>
                 <div class="media-grids" id="comment">
+                    <c:if test="${commentCount == 0}">
+                        <p id="nobody" style="text-align: center">还没有评论哦，赶快抢占沙发吧！</p>
+                    </c:if>
                     <c:forEach items="${commentsList}" var="i" varStatus="s">
                         <c:if test="${s.count <= 6}">
                             <div class="media">
