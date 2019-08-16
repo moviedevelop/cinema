@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.etc.dao.MoviesMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
   <resultMap id="BaseResultMap" type="com.etc.pojo.Movies">
     <id column="movie_id" jdbcType="INTEGER" property="movieId" />
     <result column="movie_name" jdbcType="VARCHAR" property="movieName" />
@@ -15,6 +16,7 @@
     <result column="movie_mark" jdbcType="REAL" property="movieMark" />
     <result column="keyword" jdbcType="VARCHAR" property="keyWord" />
     <result column="movie_size" jdbcType="INTEGER" property="movieSize"/>
+      <result column="movie_classify" jdbcType="INTEGER" property="movieClassify"/>
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.etc.pojo.MoviesWithBLOBs">
     <result column="movie_img" jdbcType="LONGVARCHAR" property="movieImg" />
@@ -23,7 +25,7 @@
 
   <sql id="Base_Column_List">
     movie_id, movie_name, movie_time, movie_date, movie_area, movie_lang, movie_director,
-    movie_writer, movie_actor, movie_type, movie_mark, keyword, movie_size
+    movie_writer, movie_actor, movie_type, movie_mark, keyword, movie_size,movie_classify
   </sql>
   <sql id="Blob_Column_List">
     movie_img, description
@@ -37,12 +39,56 @@
     SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 0 ORDER BY movie_mark DESC LIMIT 0,12
   </select>
 
+  <select id="selectRecentTelePlays" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_date DESC LIMIT 0,6
+  </select>
+
+  <select id="selectTelePlaysOrderByMark" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
   <select id="selectTelePlays" resultMap="ResultMapWithBLOBs">
     SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_mark DESC LIMIT 0,6
   </select>
 
+    <select id="selectTelePlaysByChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 and movie_area ='中国大陆' ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+    <select id="selectTelePlaysByUnChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 and movie_area !='中国大陆' ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+    <select id="selectVarietyShows" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 3 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+  <select id="selectRecommendedShows" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify in(1,3) and length(movie_name) &lt;34 ORDER BY movie_mark DESC LIMIT 0,9
+  </select>
+
+  <select id="selectLikeComics" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify =2 and length(movie_name) &lt;34 ORDER BY movie_mark DESC LIMIT 0,9
+  </select>
+
   <select id="selectComics" resultMap="ResultMapWithBLOBs">
     SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+  <select id="selectRecentComics" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_date DESC LIMIT 0,4
+  </select>
+
+    <select id="selectComicsOrderByMark" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_mark DESC LIMIT 0,4
+  </select>
+
+    <select id="selectComicsByChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 and movie_area ='中国大陆' ORDER BY movie_mark DESC LIMIT 0,4
+  </select>
+
+    <select id="selectComicsByUnChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 and movie_area !='中国大陆' ORDER BY movie_mark DESC LIMIT 0,4
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">

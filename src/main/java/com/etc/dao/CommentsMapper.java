@@ -2,8 +2,9 @@ package com.etc.dao;
 
 import com.etc.pojo.Comments;
 
-public interface CommentsMapper {
+import java.util.List;
 
+public interface CommentsMapper {
 
     int deleteByPrimaryKey(Integer commentId);
 
@@ -18,4 +19,8 @@ public interface CommentsMapper {
     int updateByPrimaryKeyWithBLOBs(Comments record);
 
     int updateByPrimaryKey(Comments record);
+
+    int selectCount(Integer movieId);
+
+    List<Comments> selectCommentLimit(Comments comments);
 }

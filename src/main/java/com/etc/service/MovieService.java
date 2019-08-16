@@ -18,4 +18,26 @@ public interface MovieService {
     List<MoviesWithBLOBs> selectComics();
 
     List<MoviesWithBLOBs> selectTelePlays();
+
+    List<MoviesWithBLOBs> selectTelePlaysOrderByMark();
+
+    List<MoviesWithBLOBs> selectRecentTelePlays();
+
+    List<MoviesWithBLOBs> selectTelePlaysByChina();
+
+    List<MoviesWithBLOBs> selectTelePlaysByUnChina();
+
+    List<MoviesWithBLOBs> selectVarietyShows();
+
+    List<MoviesWithBLOBs> selectRecentComics();
+
+    List<MoviesWithBLOBs> selectComicsOrderByMark();
+
+    List<MoviesWithBLOBs> selectComicsByChina();
+
+    List<MoviesWithBLOBs> selectComicsByUnChina();
+
+    List<MoviesWithBLOBs> selectRecommendedShows();
+
+    List<MoviesWithBLOBs> selectLikeComics();
 }

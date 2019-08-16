@@ -47,4 +47,60 @@ public class MovieServiceImpl implements MovieService {
     public List<MoviesWithBLOBs> selectTelePlays() {
         return mapper.selectTelePlays();
     }
+
+    @Override
+    public List<MoviesWithBLOBs> selectTelePlaysOrderByMark() {
+        return mapper.selectTelePlaysOrderByMark();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectRecentTelePlays() {
+        return mapper.selectRecentTelePlays();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectTelePlaysByChina() {
+        return mapper.selectTelePlaysByChina();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectTelePlaysByUnChina() {
+        return mapper.selectTelePlaysByUnChina();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectVarietyShows() {
+        return mapper.selectVarietyShows();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectRecentComics() {
+        return mapper.selectRecentComics();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectComicsOrderByMark() {
+        return mapper.selectComicsOrderByMark();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectComicsByChina() {
+        return mapper.selectComicsByChina();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectComicsByUnChina() {
+        return mapper.selectComicsByUnChina();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectRecommendedShows() {
+        return mapper.selectRecommendedShows();
+    }
+
+    @Override
+    public List<MoviesWithBLOBs> selectLikeComics() {
+        return mapper.selectLikeComics();
+    }
+
 }

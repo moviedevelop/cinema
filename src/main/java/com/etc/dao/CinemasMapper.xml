@@ -12,12 +12,24 @@
     <result column="cinema_address" jdbcType="LONGVARCHAR" property="cinemaAddress" />
   </resultMap>
 
+  <resultMap id="cinemaMap" type="com.etc.vo.CinemaVo">
+    <id column="cinema_id" jdbcType="INTEGER" property="cinemaId" />
+    <result column="cinema_name" jdbcType="VARCHAR" property="cinemaName" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="county" jdbcType="VARCHAR" property="county" />
+    <result column="cinema_address" jdbcType="LONGVARCHAR" property="cinemaAddress" />
+  </resultMap>
+
   <sql id="Base_Column_List">
     cinema_id, cinema_name, cinema_city, cinema_area
   </sql>
   <sql id="Blob_Column_List">
     cinema_address
   </sql>
+
+  <select id="selectCinemaByCity" resultMap="cinemaMap">
+    SELECT c.cinema_id,c.cinema_name,r.region_name city,c.cinema_address FROM cinemas c,regions r WHERE c.cinema_city = r.region_id AND c.cinema_city = #{cityId};
+  </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 
