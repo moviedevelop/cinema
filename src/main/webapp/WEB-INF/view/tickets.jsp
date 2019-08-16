@@ -174,7 +174,6 @@
                 contentType: "application/json",
                 data: data,
                 success: function (json) {
-                    alert("你麻痹");
                     console.log(json);
                 }
             })
