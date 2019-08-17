@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -54,7 +53,7 @@ public class MovieController {
     public ModelAndView movieTickets(@PathVariable Integer movieId, ModelAndView modelAndView) {
         ArgumentVo args = new ArgumentVo();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        args.setChooseDay(sdf.format(new Date()));
+        args.setChooseDay("2019-08-16");
         args.setCityId(1183);
         args.setMovieId(movieId);
         MoviesWithBLOBs movieTickets = movieService.selectByPrimaryKey(movieId);

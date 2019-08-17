@@ -4,6 +4,7 @@ import com.etc.dao.CMListMapper;
 import com.etc.service.CMListService;
 import com.etc.vo.ArgumentVo;
 import com.etc.vo.CMListVo;
+import com.etc.vo.MovieCinemaInfo;
 import com.etc.vo.MovieTimeListVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,10 @@ public class CMListServiceImpl implements CMListService {
     @Override
     public List<CMListVo> selectCinemaInfo(ArgumentVo args) {
         return mapper.selectCinemaInfo(args);
+    }
+
+    @Override
+    public List<MovieCinemaInfo> selectCinemaDisplayInfo(ArgumentVo args) {
+        return mapper.selectCinemaDisplayInfo(args);
     }
 }

@@ -107,6 +107,11 @@
             color: orangered;
             border-radius: 5%;
         }
+
+        .buy{
+            background-color: #f03d37;
+            color: #FFFFFF;
+        }
     </style>
 </head>
 <body>
@@ -157,6 +162,7 @@
             $("#area_id").text('');
             $("#area_name").text('');
             $(this).css("display", "none");
+            regiontest();
         })
 
         var regiontest = function test() {
@@ -168,6 +174,7 @@
                 args.countyId = $("#area_id").text();
             }
             var data = JSON.stringify(args);
+
             $.ajax({
                 type: "post",
                 url: "/cinema/movie/search",
@@ -175,6 +182,21 @@
                 data: data,
                 success: function (json) {
                     console.log(json);
+                    var str = "";
+                    for (var i = 0;i < json.length;i++){
+                        str += "<div class='row movie-info' style='border-bottom: 1px solid #9D9D9D;'>" +
+                            "<div class='col-md-8 cinema-info'>" +
+                            "<h4>" + json[i].cinemaName + "</h4>" +
+                            "<p>" + json[i].cinemaAddress + "</p>" +
+                            "<p>最近场次:" + json[i].startTime + "</p>" +
+                        "</div>" +
+                        "<div class='col-md-3' style='text-align: right;margin-top: 25px;'><span style='color: red;font-size: 16px;font-weight: bold;padding: 0px'>￥" + json[i].minPrice + "</span>起" +
+                            "</div><div class='col-md-1' style='text-align: left;margin-top: 25px;padding-right: 10px'>" +
+                            "<button class='btn buy'>点击购票</button></div>" +
+                            "</div>";
+
+                    }
+                    $("#cinema").html(str);
                 }
             })
         }
@@ -243,22 +265,33 @@
             $(this).css("color", "orangered");
             $(this).css("border", "1px dotted orangered");
             $(this).attr("id", "chosen");
+            regiontest();
         })
     </script>
     <div id="cinema">
         <c:forEach items="${cmListVos}" var="i">
             <div class="row movie-info" style="border-bottom: 1px solid #9D9D9D;">
-                <div class="col-md-10 cinema-info">
+                <div class="col-md-8 cinema-info">
                     <h4>${i.cinemaName}</h4>
                     <p>${i.cinemaAddress}</p>
                     <p>最近场次:${i.startTime}</p>
                 </div>
-                <div class="col-md-2" style="text-align: right;margin-top: 25px;"><span
-                        style="color: red;font-size: 20px">${i.minPrice}元</span>起
+                <div class="col-md-3" style="text-align: right;margin-top: 25px;">
+                    <span style="color: red;font-size: 16px;font-weight: bold;padding: 0;">￥${i.minPrice} </span>起
+                </div>
+                <div class="col-md-1" style="text-align: left;margin-top: 25px;padding-right: 10px">
+                    <button class="btn buy" onclick="buy(${i.cinemaId})">点击购票</button>
                 </div>
             </div>
         </c:forEach>
     </div>
+    <script>
+       function buy(cinemaId) {
+            var moiveId = ${movieTickets.movieId};
+            var chooseDay = new Date().getFullYear() + "-" + $("#chosen").children().text().trim();
+            window.location.href="/cinema/theatre/buy/" + cinemaId + "?movieId=" + moiveId + "&chooseDay=" + chooseDay;
+        }
+    </script>
 </div>
 </div>
 </body>
