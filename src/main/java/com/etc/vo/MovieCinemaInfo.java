@@ -14,6 +14,10 @@ public class MovieCinemaInfo {
 
     private String roomName;
 
+    private Integer cinemaId;
+
+    private Integer movieId;
+
     private Float price;
 
     public Integer getListId() {
@@ -64,6 +68,22 @@ public class MovieCinemaInfo {
         this.price = price;
     }
 
+    public Integer getCinemaId() {
+        return cinemaId;
+    }
+
+    public void setCinemaId(Integer cinemaId) {
+        this.cinemaId = cinemaId;
+    }
+
+    public Integer getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(Integer movieId) {
+        this.movieId = movieId;
+    }
+
     @Override
     public String toString() {
         return "MovieCinemaInfo{" +
@@ -72,6 +92,8 @@ public class MovieCinemaInfo {
                 ", MovieLang='" + MovieLang + '\'' +
                 ", movieTime='" + movieTime + '\'' +
                 ", roomName='" + roomName + '\'' +
+                ", cinemaId=" + cinemaId +
+                ", movieId=" + movieId +
                 ", price=" + price +
                 '}';
     }

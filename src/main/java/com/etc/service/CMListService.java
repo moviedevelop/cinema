@@ -1,9 +1,6 @@
 package com.etc.service;
 
-import com.etc.vo.ArgumentVo;
-import com.etc.vo.CMListVo;
-import com.etc.vo.MovieCinemaInfo;
-import com.etc.vo.MovieTimeListVo;
+import com.etc.vo.*;
 
 import java.util.List;
 
@@ -13,4 +10,6 @@ public interface CMListService {
     List<CMListVo> selectCinemaInfo(ArgumentVo args);
 
     List<MovieCinemaInfo> selectCinemaDisplayInfo(ArgumentVo args);
+
+    MovieSeatVo forChooseSeat(Integer listId);
 }

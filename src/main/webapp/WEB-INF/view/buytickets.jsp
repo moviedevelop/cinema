@@ -104,30 +104,29 @@
             font-size: 16px;
         }
 
-        .table{
+        .table {
             text-align: center;
         }
 
 
-
-        .table tbody tr td{
+        .table tbody tr td {
             height: 64px;
             vertical-align: middle;
             font-size: 14px;
         }
 
-        td span{
+        td span {
             padding: 0;
         }
 
-        #end-time{
-            font-size: 10px !important;
+        #end-time {
+            font-size: 12px !important;
             font-weight: lighter;
             color: #999999;
         }
 
-        .start-time{
-            font-size: 24px !important;
+        .start-time {
+            font-size: 20px !important;
             font-weight: bold;
         }
 
@@ -172,8 +171,35 @@
             $(this).css("color", "orangered");
             $(this).css("border", "1px dotted orangered");
             $(this).attr("id", "chosen");
-            regiontest();
+            test();
+
         })
+
+        var test = function changeDay() {
+            var args = {};
+            args.chooseDay = new Date().getFullYear() + "-" + $("#chosen").text().trim();
+            args.movieId = ${movieCinemaInfos.get(0).movieId};
+            args.cinemaId = ${movieCinemaInfos.get(0).cinemaId};
+            var data = JSON.stringify(args);
+            var str = "";
+            $.ajax({
+                type:"post",
+                url:"/cinema/theatre/change",
+                contentType:"application/json",
+                data:data,
+                success:function (json) {
+                    for (var i = 0;i < json.length;i++) {
+                        str += "<tr><td><span class='start-time'>" + json[i].startTime + "</span><br><span class=\"end-time\"></span></td>\n" +
+                    "                <td>" + json[i].movieLang + "</td>\n" +
+                    "                <td>" + json[i].roomName + "</td>\n" +
+                    "                <td>" + json[i].price + "</td>\n" +
+                    "                <td><a href='/cinema/theatre/seat/" + json[i].listId + "'>选座购票</a></td></tr>"
+                    }
+                    $("#body").html(str);
+                    addMovieTime();
+                }
+            })
+        }
     </script>
     <table class="table">
         <thead>
@@ -185,29 +211,37 @@
             <th>选座购票</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="body">
         <c:forEach items="${movieCinemaInfos}" var="i">
             <tr>
-                <td><span class="start-time">${i.startTime}</span><br><span id="end-time"></span></td>
+                <td><span class="start-time">${i.startTime}</span><br><span class="end-time"></span></td>
                 <td>${i.movieLang}</td>
                 <td>${i.roomName}</td>
                 <td>${i.price}</td>
-                <td><a href="#">选座购票</a></td>
+                <td><a href="/cinema/theatre/seat/${i.listId}">选座购票</a></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
 
     <script>
+        function appendZero(obj) {
+            if (obj < 10) return "0" + obj; else return obj;
+        }
 
-
-        $(document).ready(function () {
+        function addMovieTime() {
+            var timeLong = "${movieCinemaInfos.get(0).movieTime}";
+            var reg = /[\u4e00-\u9fa5]+/;
+            var long = parseInt(timeLong.replace(reg, ""));
             $(".start-time").each(function () {
-
-                var date = $(this).text();
-                console.log(date)
+                var time = $(this).text();
+                var date = new Date(new Date().getFullYear() + "-" + $("#chosen").text().trim() + " " + time);
+                date.setMinutes(date.getMinutes() + long);
+                $(this).parent().children(".end-time").text(appendZero(date.getHours()) + ":" + appendZero(date.getMinutes()) + "散场");
             })
-        })
+        }
+
+        $(document).ready(addMovieTime())
     </script>
 </div>
 </div>

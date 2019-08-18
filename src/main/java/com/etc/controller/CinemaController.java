@@ -5,11 +5,14 @@ import com.etc.service.CMListService;
 import com.etc.service.CinemaService;
 import com.etc.vo.ArgumentVo;
 import com.etc.vo.MovieCinemaInfo;
+import com.etc.vo.MovieSeatVo;
 import com.etc.vo.MovieTimeListVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -33,6 +36,20 @@ public class CinemaController {
         List<MovieTimeListVo> movieTimes = cmListService.selectUseTime(args.getMovieId());
         modelAndView.addObject("movieTimes",movieTimes);
         modelAndView.setViewName("buytickets");
+        return modelAndView;
+    }
+
+    @RequestMapping("/change")
+    @ResponseBody
+    public List<MovieCinemaInfo> changeChosenDay(@RequestBody ArgumentVo args){
+        return cmListService.selectCinemaDisplayInfo(args);
+    }
+
+    @RequestMapping("/seat/{listId}")
+    public ModelAndView chooseSeat(ModelAndView modelAndView,@PathVariable Integer listId){
+        MovieSeatVo movieSeatInfo = cmListService.forChooseSeat(listId);
+        modelAndView.addObject("movieSeatInfo",movieSeatInfo);
+        modelAndView.setViewName("choose");
         return modelAndView;
     }
 }

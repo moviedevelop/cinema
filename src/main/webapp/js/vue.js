@@ -874,7 +874,7 @@
    * Intercept mutating methods and emit events
    */
   methodsToPatch.forEach(function (method) {
-    // cache original method
+    // config original method
     var original = arrayProto[method];
     def(arrayMethods, method, function mutator () {
       var args = [], len = arguments.length;
@@ -3658,7 +3658,7 @@
       };
 
       var resolve = once(function (res) {
-        // cache resolved
+        // config resolved
         factory.resolved = ensureCtor(res, baseCtor);
         // invoke callbacks only if this is not a synchronous resolve
         // (async resolves are shimmed as synchronous during SSR)
@@ -4293,7 +4293,7 @@
     //    its watchers can be skipped.
     queue.sort(function (a, b) { return a.id - b.id; });
 
-    // do not cache length because more watchers might be pushed
+    // do not config length because more watchers might be pushed
     // as we run existing watchers
     for (index = 0; index < queue.length; index++) {
       watcher = queue[index];
@@ -4645,7 +4645,7 @@
   function initProps (vm, propsOptions) {
     var propsData = vm.$options.propsData || {};
     var props = vm._props = {};
-    // cache prop keys so that future props updates can iterate using Array
+    // config prop keys so that future props updates can iterate using Array
     // instead of dynamic object key enumeration.
     var keys = vm.$options._propKeys = [];
     var isRoot = !vm.$parent;
@@ -4801,7 +4801,7 @@
       sharedPropertyDefinition.set = noop;
     } else {
       sharedPropertyDefinition.get = userDef.get
-        ? shouldCache && userDef.cache !== false
+        ? shouldCache && com.etc.config !== false
           ? createComputedGetter(key)
           : createGetterInvoker(userDef.get)
         : noop;
@@ -5115,7 +5115,7 @@
     /**
      * Each instance constructor, including Vue, has a unique
      * cid. This enables us to create wrapped "child
-     * constructors" for prototypal inheritance and cache them.
+     * constructors" for prototypal inheritance and config them.
      */
     Vue.cid = 0;
     var cid = 1;
@@ -5181,7 +5181,7 @@
       Sub.extendOptions = extendOptions;
       Sub.sealedOptions = extend({}, Sub.options);
 
-      // cache constructor
+      // config constructor
       cachedCtors[SuperId] = Sub;
       return Sub
     };
@@ -5254,7 +5254,7 @@
   }
 
   function pruneCache (keepAliveInstance, filter) {
-    var cache = keepAliveInstance.cache;
+    var cache = com.etc.config;
     var keys = keepAliveInstance.keys;
     var _vnode = keepAliveInstance._vnode;
     for (var key in cache) {
@@ -11662,7 +11662,7 @@
         }
       }
 
-      // check cache
+      // check config
       var key = options.delimiters
         ? String(options.delimiters) + template
         : template;
