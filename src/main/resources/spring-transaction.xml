@@ -28,4 +28,5 @@
         <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.etc.service.impl.*.*(..))"/>
     </aop:config>
 
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
 </beans>

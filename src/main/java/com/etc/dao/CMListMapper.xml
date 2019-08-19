@@ -49,6 +49,10 @@
     list_id, movie_id, room_id, price, show_time
   </sql>
 
+    <update id="updateSeatInfo">
+        update c_m_list set unavailable_seat = CONCAT(unavailable_seat,#{unavailableSeat}) WHERE list_id = #{listId}
+    </update>
+
     <select id="forChooseSeat" resultMap="forSeatMap">
 SELECT
 	cm.list_id,
@@ -111,6 +115,10 @@ ORDER BY
     <select id="selectUseTime" resultMap="showTime">
     SELECT DISTINCT show_time FROM c_m_list WHERE movie_id = #{movieId};
   </select>
+
+    <select id="getPrice" parameterType="int" resultType="float">
+        select price from c_m_list where list_id = #{listId}
+    </select>
 
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select

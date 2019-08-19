@@ -5,6 +5,8 @@ import java.util.Date;
 public class Orders {
     private Integer orderId;
 
+    private String orderNo;
+
     private Date orderTime;
 
     private Integer listId;
@@ -15,12 +17,24 @@ public class Orders {
 
     private Integer userId;
 
+    private Integer orderStatus;
+
+    private Float orderPrice;
+
     public Integer getOrderId() {
         return orderId;
     }
 
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
+    }
+
+    public String getOrderNo() {
+        return orderNo;
+    }
+
+    public void setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
     }
 
     public Date getOrderTime() {
@@ -61,5 +75,36 @@ public class Orders {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(Integer orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public Float getOrderPrice() {
+        return orderPrice;
+    }
+
+    public void setOrderPrice(Float orderPrice) {
+        this.orderPrice = orderPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "orderId=" + orderId +
+                ", orderNo='" + orderNo + '\'' +
+                ", orderTime=" + orderTime +
+                ", listId=" + listId +
+                ", orderNum=" + orderNum +
+                ", orderSeat='" + orderSeat + '\'' +
+                ", userId=" + userId +
+                ", orderStatus=" + orderStatus +
+                ", orderPrice=" + orderPrice +
+                '}';
     }
 }

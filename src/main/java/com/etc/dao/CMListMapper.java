@@ -26,4 +26,8 @@ public interface CMListMapper {
     List<MovieCinemaInfo> selectCinemaDisplayInfo(ArgumentVo args);
 
     MovieSeatVo forChooseSeat(Integer listId);
+
+    Float getPrice(Integer listId);
+
+    void updateSeatInfo(UpdateCMListVo updateCMListVo);
 }

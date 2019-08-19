@@ -32,4 +32,14 @@ public class CMListServiceImpl implements CMListService {
     public MovieSeatVo forChooseSeat(Integer listId) {
         return mapper.forChooseSeat(listId);
     }
+
+    @Override
+    public Float getPrice(Integer listId) {
+        return mapper.getPrice(listId);
+    }
+
+    @Override
+    public void updateSeatInfo(UpdateCMListVo updateCMListVo) {
+        mapper.updateSeatInfo(updateCMListVo);
+    }
 }

@@ -273,15 +273,34 @@
     $(".checkout-button").click(function () {
         var chosenSeat = $("#selected-seats").children("li");
         var len = chosenSeat.length;
-        var display = "";
         var str = "";
+        var seat = "";
+        var dataStr = {};
         $.each(chosenSeat,function (i) {
             str += ",'" + $(this).attr("id").substring(10) + "'";
-            display += $(this).attr("id").substring(10);
+            seat += $(this).text() + " ";
         })
 
-        console.log(str);
-        console.log(display);
+        dataStr.totalCount = $("#counter").text();
+        dataStr.totalPrice = parseFloat($("#total").text());
+        dataStr.unavailableSeat = str;
+        dataStr.seat = seat;
+        dataStr.listId = ${movieSeatInfo.listId};
+        var data = JSON.stringify(dataStr);
+        console.log(data);
+        $.ajax({
+            type:"post",
+            url:"/cinema/save",
+            contentType:"application/json",
+            data:data,
+            success:function (orderId) {
+                if (orderId == -1){
+                    alert("要先登录哦");
+                    return;
+                }
+                window.location.href = "/cinema/pay/" + orderId;
+            }
+        })
         //console.log(chosenSeat)
     })
 
