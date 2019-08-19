@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.dao.MoviesMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+  <resultMap id="BaseResultMap" type="com.etc.pojo.Movies">
+    <id column="movie_id" jdbcType="INTEGER" property="movieId" />
+    <result column="movie_name" jdbcType="VARCHAR" property="movieName" />
+    <result column="movie_time" jdbcType="VARCHAR" property="movieTime" />
+    <result column="movie_date" jdbcType="VARCHAR" property="movieDate" />
+    <result column="movie_area" jdbcType="VARCHAR" property="movieArea" />
+    <result column="movie_lang" jdbcType="VARCHAR" property="movieLang" />
+    <result column="movie_director" jdbcType="VARCHAR" property="movieDirector" />
+    <result column="movie_writer" jdbcType="VARCHAR" property="movieWriter" />
+    <result column="movie_actor" jdbcType="VARCHAR" property="movieActor" />
+    <result column="movie_type" jdbcType="VARCHAR" property="movieType" />
+    <result column="movie_mark" jdbcType="REAL" property="movieMark" />
+    <result column="keyword" jdbcType="VARCHAR" property="keyWord" />
+    <result column="movie_size" jdbcType="INTEGER" property="movieSize"/>
+      <result column="movie_classify" jdbcType="INTEGER" property="movieClassify"/>
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.etc.pojo.MoviesWithBLOBs">
+    <result column="movie_img" jdbcType="LONGVARCHAR" property="movieImg" />
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    movie_id, movie_name, movie_time, movie_date, movie_area, movie_lang, movie_director,
+    movie_writer, movie_actor, movie_type, movie_mark, keyword, movie_size,movie_classify
+  </sql>
+  <sql id="Blob_Column_List">
+    movie_img, description
+  </sql>
+
+  <select id="selectRecentMovie" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img FROM movies WHERE movie_classify = -1 ORDER BY movie_date DESC LIMIT 0,6
+  </select>
+
+  <select id="selectMovieOrderByMark" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 0 ORDER BY movie_mark DESC LIMIT 0,12
+  </select>
+
+  <select id="selectRecentTelePlays" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_date DESC LIMIT 0,6
+  </select>
+
+  <select id="selectTelePlaysOrderByMark" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+  <select id="selectTelePlays" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+    <select id="selectTelePlaysByChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 and movie_area ='中国大陆' ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+    <select id="selectTelePlaysByUnChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 1 and movie_area !='中国大陆' ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+    <select id="selectVarietyShows" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 3 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+  <select id="selectRecommendedShows" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify in(1,3) and length(movie_name) &lt;34 ORDER BY movie_mark DESC LIMIT 0,9
+  </select>
+
+  <select id="selectLikeComics" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify =2 and length(movie_name) &lt;34 ORDER BY movie_mark DESC LIMIT 0,9
+  </select>
+
+  <select id="selectComics" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_mark DESC LIMIT 0,6
+  </select>
+
+  <select id="selectRecentComics" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_date DESC LIMIT 0,4
+  </select>
+
+    <select id="selectComicsOrderByMark" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 ORDER BY movie_mark DESC LIMIT 0,4
+  </select>
+
+    <select id="selectComicsByChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 and movie_area ='中国大陆' ORDER BY movie_mark DESC LIMIT 0,4
+  </select>
+
+    <select id="selectComicsByUnChina" resultMap="ResultMapWithBLOBs">
+    SELECT movie_id,movie_name,movie_area,movie_lang,movie_time,movie_img,movie_mark FROM movies WHERE movie_classify = 2 and movie_area !='中国大陆' ORDER BY movie_mark DESC LIMIT 0,4
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from movies
+    where movie_id = #{movieId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from movies
+    where movie_id = #{movieId,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.etc.pojo.MoviesWithBLOBs">
+    insert into movies (movie_id, movie_name, movie_time,
+      movie_date, movie_area, movie_lang,
+      movie_director, movie_writer, movie_actor,
+      movie_type, movie_mark, keyword,movie_size,
+      movie_img, description)
+    values (#{movieId,jdbcType=INTEGER}, #{movieName,jdbcType=VARCHAR}, #{movieTime,jdbcType=VARCHAR},
+      #{movieDate,jdbcType=VARCHAR}, #{movieArea,jdbcType=VARCHAR}, #{movieLang,jdbcType=VARCHAR},
+      #{movieDirector,jdbcType=VARCHAR}, #{movieWriter,jdbcType=VARCHAR}, #{movieActor,jdbcType=VARCHAR},
+      #{movieType,jdbcType=VARCHAR}, #{movieMark,jdbcType=REAL}, #{keyWord,jdbcType=VARCHAR},#{movieSize,jdbcType=INTEGER}
+      #{movieImg,jdbcType=LONGVARCHAR}, #{description,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.etc.pojo.Movies">
+    insert into movies
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="movieId != null">
+        movie_id,
+      </if>
+      <if test="movieName != null">
+        movie_name,
+      </if>
+      <if test="movieTime != null">
+        movie_time,
+      </if>
+      <if test="movieDate != null">
+        movie_date,
+      </if>
+      <if test="movieArea != null">
+        movie_area,
+      </if>
+      <if test="movieLang != null">
+        movie_lang,
+      </if>
+      <if test="movieDirector != null">
+        movie_director,
+      </if>
+      <if test="movieWriter != null">
+        movie_writer,
+      </if>
+      <if test="movieActor != null">
+        movie_actor,
+      </if>
+      <if test="movieType != null">
+        movie_type,
+      </if>
+      <if test="movieMark != null">
+        movie_mark,
+      </if>
+      <if test="keyWord != null">
+        keyword,
+      </if>
+      <if test="movieSize != null">
+        movie_size,
+      </if>
+      <if test="movieImg != null">
+        movie_img,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="movieId != null">
+        #{movieId,jdbcType=INTEGER},
+      </if>
+      <if test="movieName != null">
+        #{movieName,jdbcType=VARCHAR},
+      </if>
+      <if test="movieTime != null">
+        #{movieTime,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDate != null">
+        #{movieDate,jdbcType=VARCHAR},
+      </if>
+      <if test="movieArea != null">
+        #{movieArea,jdbcType=VARCHAR},
+      </if>
+      <if test="movieLang != null">
+        #{movieLang,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDirector != null">
+        #{movieDirector,jdbcType=VARCHAR},
+      </if>
+      <if test="movieWriter != null">
+        #{movieWriter,jdbcType=VARCHAR},
+      </if>
+      <if test="movieActor != null">
+        #{movieActor,jdbcType=VARCHAR},
+      </if>
+      <if test="movieType != null">
+        #{movieType,jdbcType=VARCHAR},
+      </if>
+      <if test="movieMark != null">
+        #{movieMark,jdbcType=REAL},
+      </if>
+      <if test="keyWord != null">
+        #{keyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="movieSize != null">
+        #{movieSize,jdbcType=INTEGER},
+      </if>
+      <if test="movieImg != null">
+        #{movieImg,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.etc.pojo.MoviesWithBLOBs">
+    update movies
+    <set>
+      <if test="movieName != null">
+        movie_name = #{movieName,jdbcType=VARCHAR},
+      </if>
+      <if test="movieTime != null">
+        movie_time = #{movieTime,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDate != null">
+        movie_date = #{movieDate,jdbcType=VARCHAR},
+      </if>
+      <if test="movieArea != null">
+        movie_area = #{movieArea,jdbcType=VARCHAR},
+      </if>
+      <if test="movieLang != null">
+        movie_lang = #{movieLang,jdbcType=VARCHAR},
+      </if>
+      <if test="movieDirector != null">
+        movie_director = #{movieDirector,jdbcType=VARCHAR},
+      </if>
+      <if test="movieWriter != null">
+        movie_writer = #{movieWriter,jdbcType=VARCHAR},
+      </if>
+      <if test="movieActor != null">
+        movie_actor = #{movieActor,jdbcType=VARCHAR},
+      </if>
+      <if test="movieType != null">
+        movie_type = #{movieType,jdbcType=VARCHAR},
+      </if>
+      <if test="movieMark != null">
+        movie_mark = #{movieMark,jdbcType=REAL},
+      </if>
+      <if test="keyWord != null">
+        keyword = #{keyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="movieSize != null">
+        movie_size = #{movieSize,jdbcType=INTEGER},
+      </if>
+      <if test="movieImg != null">
+        movie_img = #{movieImg,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where movie_id = #{movieId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.etc.pojo.MoviesWithBLOBs">
+    update movies
+    set movie_name = #{movieName,jdbcType=VARCHAR},
+      movie_time = #{movieTime,jdbcType=VARCHAR},
+      movie_date = #{movieDate,jdbcType=VARCHAR},
+      movie_area = #{movieArea,jdbcType=VARCHAR},
+      movie_lang = #{movieLang,jdbcType=VARCHAR},
+      movie_director = #{movieDirector,jdbcType=VARCHAR},
+      movie_writer = #{movieWriter,jdbcType=VARCHAR},
+      movie_actor = #{movieActor,jdbcType=VARCHAR},
+      movie_type = #{movieType,jdbcType=VARCHAR},
+      movie_mark = #{movieMark,jdbcType=REAL},
+      keyword = #{keyWord,jdbcType=VARCHAR},
+      movie_size = #{movieSize,jdbcType=INTEGER},
+      movie_img = #{movieImg,jdbcType=LONGVARCHAR},
+      description = #{description,jdbcType=LONGVARCHAR}
+    where movie_id = #{movieId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.etc.pojo.Movies">
+    update movies
+    set movie_name = #{movieName,jdbcType=VARCHAR},
+      movie_time = #{movieTime,jdbcType=VARCHAR},
+      movie_date = #{movieDate,jdbcType=VARCHAR},
+      movie_area = #{movieArea,jdbcType=VARCHAR},
+      movie_lang = #{movieLang,jdbcType=VARCHAR},
+      movie_director = #{movieDirector,jdbcType=VARCHAR},
+      movie_writer = #{movieWriter,jdbcType=VARCHAR},
+      movie_actor = #{movieActor,jdbcType=VARCHAR},
+      movie_type = #{movieType,jdbcType=VARCHAR},
+      movie_mark = #{movieMark,jdbcType=REAL},
+      keyword = #{keyWord,jdbcType=VARCHAR},
+      movie_size = #{movieSize,jdbcType=INTEGER},
+    where movie_id = #{movieId,jdbcType=INTEGER}
+  </update>
+</mapper>

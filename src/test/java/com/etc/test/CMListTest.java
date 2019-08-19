@@ -1,10 +1,7 @@
 package com.etc.test;
 
 import com.etc.dao.CMListMapper;
-import com.etc.vo.ArgumentVo;
-import com.etc.vo.CMListVo;
-import com.etc.vo.MovieCinemaInfo;
-import com.etc.vo.MovieTimeListVo;
+import com.etc.vo.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -52,5 +49,13 @@ public class CMListTest {
         for (MovieCinemaInfo info : movieCinemaInfo){
             System.out.println(info.toString());
         }
+    }
+
+    @Test
+    public void updateSeatInfo(){
+        UpdateCMListVo uv = new UpdateCMListVo();
+        uv.setListId(4);
+        uv.setUnavailableSeat(",'3_6'");
+        mapper.updateSeatInfo(uv);
     }
 }

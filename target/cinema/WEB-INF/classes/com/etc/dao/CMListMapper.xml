@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.dao.CMListMapper">
+    <resultMap id="BaseResultMap" type="com.etc.pojo.CMList">
+        <id column="list_id" jdbcType="INTEGER" property="listId"/>
+        <result column="movie_id" jdbcType="INTEGER" property="movieId"/>
+        <result column="room_id" jdbcType="INTEGER" property="roomId"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
+        <result column="show_time" jdbcType="DATE" property="showTime"/>
+    </resultMap>
+
+    <resultMap id="showTime" type="com.etc.vo.MovieTimeListVo">
+        <result column="show_time" jdbcType="DATE" property="showTime"/>
+    </resultMap>
+
+    <resultMap id="cinemaInfo" type="com.etc.vo.CMListVo">
+        <result column="movie_start_time" property="startTime"/>
+        <result column="min_price" property="minPrice"/>
+        <result column="cinema_id" property="cinemaId"/>
+        <result column="cinema_name" property="cinemaName"/>
+        <result column="cinema_address" property="cinemaAddress"/>
+    </resultMap>
+
+    <resultMap id="cinemaMovieInfo" type="com.etc.vo.MovieCinemaInfo">
+        <result column="list_id" property="listId"/>
+        <result column="start_time" property="startTime"/>
+        <result column="movie_lang" property="movieLang"/>
+        <result column="movie_time" property="movieTime"/>
+        <result column="room_name" property="roomName"/>
+        <result column="cinema_id" property="cinemaId"/>
+        <result column="movie_id" property="movieId"/>
+        <result column="price" property="price"/>
+    </resultMap>
+
+    <resultMap id="forSeatMap" type="com.etc.vo.MovieSeatVo">
+        <result column="list_id" property="listId"/>
+        <result column="start_time" property="startTime"/>
+        <result column="room_name" property="roomName"/>
+        <result column="movie_name" property="movieName"/>
+        <result column="movie_time" property="movieTime"/>
+        <result column="cinema_name" property="cinemaName"/>
+        <result column="show_time" property="showTime"/>
+        <result column="price" property="price"/>
+        <result column="unavailable_seat" property="unavailableSeat"/>
+        <result column="room_map" property="roomMap"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    list_id, movie_id, room_id, price, show_time
+  </sql>
+
+    <update id="updateSeatInfo">
+        update c_m_list set unavailable_seat = CONCAT(unavailable_seat,#{unavailableSeat}) WHERE list_id = #{listId}
+    </update>
+
+    <select id="forChooseSeat" resultMap="forSeatMap">
+SELECT
+	cm.list_id,
+	m.movie_name,
+	m.movie_time,
+	c.cinema_name,
+	s.room_name,
+	s.room_map,
+	cm.start_time,
+	cm.show_time,
+	cm.price,
+	cm.unavailable_seat
+FROM
+	c_m_list cm,
+	sroom s,
+	cinemas c,
+	movies m
+WHERE
+	cm.room_id = s.room_id
+AND s.cinema_id = c.cinema_id
+AND cm.movie_id = m.movie_id
+AND cm.list_id = #{listId};
+    </select>
+
+    <select id="selectCinemaDisplayInfo" resultMap="cinemaMovieInfo" parameterType="com.etc.vo.ArgumentVo">
+SELECT
+	cm.list_id,
+	cm.start_time,
+	cm.movie_id,
+	m.movie_lang,
+	m.movie_time,
+	s.room_name,
+	s.cinema_id,
+	cm.price
+FROM
+	c_m_list cm,
+	sroom s,
+	movies m
+WHERE
+	cm.room_id = s.room_id
+AND cm.movie_id = m.movie_id
+AND cm.movie_id = #{movieId}
+AND cm.show_time = #{chooseDay}
+AND s.cinema_id = #{cinemaId}
+ORDER BY
+	cm.start_time;
+  </select>
+
+    <select id="selectCinemaInfo" resultMap="cinemaInfo" parameterType="com.etc.vo.ArgumentVo">
+        SELECT
+        MIN(cm.start_time) movie_start_time,MIN(price) min_price,c.cinema_id,c.cinema_name,c.cinema_address
+        FROM c_m_list cm,cinemas c,sroom s WHERE cm.room_id = s.room_id AND s.cinema_id = c.cinema_id
+        AND cm.movie_id = #{movieId} AND c.cinema_city = #{cityId}
+        <if test="countyId != null">
+            and c.cinema_area = #{countyId}
+        </if>
+        AND cm.show_time = #{chooseDay} GROUP BY c.cinema_id;
+    </select>
+
+    <select id="selectUseTime" resultMap="showTime">
+    SELECT DISTINCT show_time FROM c_m_list WHERE movie_id = #{movieId};
+  </select>
+
+    <select id="getPrice" parameterType="int" resultType="float">
+        select price from c_m_list where list_id = #{listId}
+    </select>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from c_m_list
+        where list_id = #{listId,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from c_m_list
+    where list_id = #{listId,jdbcType=INTEGER}
+  </delete>
+
+    <insert id="insert" parameterType="com.etc.pojo.CMList">
+    insert into c_m_list (list_id, movie_id, room_id, 
+      price, show_time)
+    values (#{listId,jdbcType=INTEGER}, #{movieId,jdbcType=INTEGER}, #{roomId,jdbcType=INTEGER}, 
+      #{price,jdbcType=DECIMAL}, #{showTime,jdbcType=DATE})
+  </insert>
+
+    <insert id="insertSelective" parameterType="com.etc.pojo.CMList">
+        insert into c_m_list
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="listId != null">
+                list_id,
+            </if>
+            <if test="movieId != null">
+                movie_id,
+            </if>
+            <if test="roomId != null">
+                room_id,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="showTime != null">
+                show_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="listId != null">
+                #{listId,jdbcType=INTEGER},
+            </if>
+            <if test="movieId != null">
+                #{movieId,jdbcType=INTEGER},
+            </if>
+            <if test="roomId != null">
+                #{roomId,jdbcType=INTEGER},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="showTime != null">
+                #{showTime,jdbcType=DATE},
+            </if>
+        </trim>
+    </insert>
+
+
+    <!--<update id="updateByExampleSelective" parameterType="map">
+      update c_m_list
+      <set>
+        <if test="record.listId != null">
+          list_id = #{record.listId,jdbcType=INTEGER},
+        </if>
+        <if test="record.movieId != null">
+          movie_id = #{record.movieId,jdbcType=INTEGER},
+        </if>
+        <if test="record.roomId != null">
+          room_id = #{record.roomId,jdbcType=INTEGER},
+        </if>
+        <if test="record.price != null">
+          price = #{record.price,jdbcType=DECIMAL},
+        </if>
+        <if test="record.showTime != null">
+          show_time = #{record.showTime,jdbcType=DATE},
+        </if>
+      </set>
+      <if test="_parameter != null">
+        <include refid="Update_By_Example_Where_Clause" />
+      </if>
+    </update>-->
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.etc.pojo.CMList">
+        update c_m_list
+        <set>
+            <if test="movieId != null">
+                movie_id = #{movieId,jdbcType=INTEGER},
+            </if>
+            <if test="roomId != null">
+                room_id = #{roomId,jdbcType=INTEGER},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="showTime != null">
+                show_time = #{showTime,jdbcType=DATE},
+            </if>
+        </set>
+        where list_id = #{listId,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.etc.pojo.CMList">
+    update c_m_list
+    set movie_id = #{movieId,jdbcType=INTEGER},
+      room_id = #{roomId,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      show_time = #{showTime,jdbcType=DATE}
+    where list_id = #{listId,jdbcType=INTEGER}
+  </update>
+</mapper>
